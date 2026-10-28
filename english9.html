@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ماژول آموزشی تعاملی زبان انگلیسی پایه نهم">
+<title>زبان انگلیسی پایه نهم | ماژول آموزشی</title>
+<!-- بارگذاری غیرمسدودکنندۀ فونت: اگر اینترنت یا سرویس فونت در دسترس نباشد، صفحه بلافاصله با فونت جایگزین (Tahoma) نمایش داده می‌شود -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"></noscript>
+<style>
+/* ============================================================
+   ماژول آموزشی زبان انگلیسی پایه نهم — استایل مستقل (eng9-*)
+   سبک هماهنگ با ماژول نمونه (ریاضی نهم)
+   ============================================================ */
+#eng9-module{
+  --eng9-bg:#f5f7fb; --eng9-surface:#fff; --eng9-surface2:#eef2f7;
+  --eng9-text:#172033; --eng9-muted:#647084;
+  --eng9-primary:#5b5cf0; --eng9-primary2:#7b61ff;
+  --eng9-good:#18a46a; --eng9-bad:#df4b58;
+  --eng9-border:#dde3ed;
+  --eng9-shadow:0 12px 35px rgba(25,35,55,.08);
+  --eng9-progress:0%;
+  font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
+  background:var(--eng9-bg); color:var(--eng9-text);
+  line-height:1.9; direction:rtl; text-align:right;
+  min-height:100vh;
+}
+#eng9-module *{box-sizing:border-box}
+#eng9-module.dark{
+  --eng9-bg:#0d1119; --eng9-surface:#151b26; --eng9-surface2:#202938;
+  --eng9-text:#edf1f7; --eng9-muted:#a4afbf; --eng9-border:#293344;
+  --eng9-shadow:0 12px 35px rgba(0,0,0,.22);
+}
+#eng9-module a{text-decoration:none;color:inherit}
+#eng9-module p{margin:8px 0}
+
+/* ---------- نوار بالای ماژول ---------- */
+.eng9-topbar{height:72px;position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:24px;padding:0 5%;background:var(--eng9-surface);background:color-mix(in srgb,var(--eng9-surface) 92%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--eng9-border)}
+.eng9-brand{display:flex;align-items:center;gap:10px;min-width:175px}
+.eng9-brand-logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--eng9-primary),var(--eng9-primary2));color:#fff;font-weight:800;font-size:17px;box-shadow:0 7px 18px rgba(27,45,85,.25);border:1px solid var(--eng9-border)}
+.eng9-brand small{display:block;color:var(--eng9-muted);font-size:11px}
+.eng9-nav{display:flex;gap:4px;flex:1;justify-content:center}
+.eng9-nav a{padding:8px 11px;border-radius:10px;color:var(--eng9-muted);font-size:14px}
+.eng9-nav a:hover{background:var(--eng9-surface2);color:var(--eng9-text)}
+.eng9-nav a.active{background:var(--eng9-surface2);color:var(--eng9-primary)}
+.eng9-actions{display:flex;gap:7px}
+.eng9-actions button,.eng9-mobile-only{border:1px solid var(--eng9-border);background:var(--eng9-surface);color:var(--eng9-text);border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:16px}
+.eng9-mobile-only{display:none}
+
+/* ---------- هیرو ---------- */
+.eng9-hero{padding:70px 5% 45px;background:radial-gradient(circle at 85% 15%,#7b61ff22,transparent 35%),radial-gradient(circle at 15% 10%,#5b5cf018,transparent 30%)}
+.eng9-hero-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.35fr .65fr;gap:40px;align-items:center}
+.eng9-eyebrow{display:inline-block;padding:5px 11px;border-radius:99px;background:#5b5cf012;color:var(--eng9-primary);font-size:12px;font-weight:bold}
+.eng9-hero h1{font-size:clamp(32px,5vw,58px);line-height:1.2;margin:15px 0}
+.eng9-hero h1 span{color:var(--eng9-primary)}
+.eng9-hero .eng9-lead{color:var(--eng9-muted);max-width:690px;font-size:17px}
+.eng9-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.eng9-btn{border:0;border-radius:12px;padding:11px 18px;cursor:pointer;font:inherit;font-weight:bold;background:var(--eng9-primary);color:#fff;display:inline-block}
+.eng9-btn:hover{filter:brightness(1.07)}
+.eng9-btn.secondary{background:var(--eng9-surface);color:var(--eng9-text);border:1px solid var(--eng9-border)}
+.eng9-progress-card{background:var(--eng9-surface);border:1px solid var(--eng9-border);padding:25px;border-radius:24px;box-shadow:var(--eng9-shadow)}
+.eng9-progress-ring{width:150px;height:150px;margin:auto;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--eng9-primary) var(--eng9-progress,0%),var(--eng9-surface2) 0)}
+.eng9-progress-ring>div{width:116px;height:116px;border-radius:50%;background:var(--eng9-surface);display:grid;place-items:center;font-size:27px;font-weight:bold}
+
+/* ---------- بخش‌ها و کارت‌ها ---------- */
+.eng9-section{max-width:1180px;margin:0 auto;padding:45px 5%}
+.eng9-section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px;flex-wrap:wrap}
+.eng9-section h2{margin:0;font-size:29px}
+.eng9-muted{color:var(--eng9-muted)}
+.eng9-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.eng9-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.eng9-card{background:var(--eng9-surface);border:1px solid var(--eng9-border);border-radius:19px;padding:19px;box-shadow:var(--eng9-shadow);transition:.2s}
+.eng9-card:hover{transform:translateY(-3px)}
+.eng9-lesson-card{min-height:190px;position:relative;overflow:hidden;display:block}
+.eng9-chapter-num{font-size:12px;color:var(--eng9-primary);font-weight:bold}
+.eng9-chapter-icon{position:absolute;left:15px;top:13px;font-size:42px;opacity:.14}
+.eng9-lesson-card h3{margin:35px 0 5px}
+.eng9-done-badge{position:absolute;top:14px;right:14px;background:var(--eng9-good);color:#fff;border-radius:99px;font-size:11px;font-weight:bold;padding:3px 10px}
+.eng9-tags{display:flex;gap:6px;flex-wrap:wrap}
+.eng9-tag{font-size:11px;background:var(--eng9-surface2);padding:3px 8px;border-radius:99px;color:var(--eng9-muted)}
+.eng9-tag.src-book{background:#5b5cf012;color:var(--eng9-primary)}
+.eng9-tag.src-wb{background:#18a46a18;color:var(--eng9-good)}
+.eng9-tag.src-q{background:#f59e0b0c;color:#b45309}
+.eng9-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.eng9-stat{padding:17px;background:var(--eng9-surface2);border-radius:15px}
+.eng9-stat b{display:block;font-size:25px}
+
+/* ---------- تب‌های درس ---------- */
+.eng9-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px;position:sticky;top:72px;z-index:10;background:var(--eng9-bg);padding:10px 0;border-bottom:1px solid var(--eng9-border)}
+.eng9-tab{border:1px solid var(--eng9-border);background:var(--eng9-surface);color:var(--eng9-muted);border-radius:12px;padding:8px 14px;cursor:pointer;font:inherit;font-size:14px;font-weight:600;transition:.15s}
+.eng9-tab:hover{border-color:var(--eng9-primary);color:var(--eng9-primary)}
+.eng9-tab.active{background:var(--eng9-primary);border-color:var(--eng9-primary);color:#fff}
+.eng9-panel{animation:eng9fade .25s ease}
+@keyframes eng9fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- جعبه‌های آموزشی ---------- */
+.eng9-rule{padding:14px 16px;border-radius:16px;background:var(--eng9-surface2);border-right:4px solid var(--eng9-primary);margin:10px 0 16px}
+.eng9-rule p{margin:6px 0 0;line-height:2}
+.eng9-exbox{background:#5b5cf00c;border-right:4px solid var(--eng9-primary);padding:12px 16px;margin:10px 0;border-radius:9px}
+.eng9-exbox .eng9-en{direction:ltr;text-align:left;font-family:Arial,sans-serif;font-weight:600}
+.eng9-exbox .eng9-fa{color:var(--eng9-muted);font-size:14px;margin-top:2px}
+.eng9-formula{background:#5b5cf00c;border-right:4px solid var(--eng9-primary);padding:12px 16px;margin:10px 0;border-radius:9px;font-family:Arial,sans-serif;direction:ltr;text-align:left}
+.eng9-example{background:#18a46a0b;border-right:4px solid var(--eng9-good);padding:14px;border-radius:10px}
+.eng9-tip{background:#f59e0b0c;border-right:4px solid #f59e0b;padding:14px;border-radius:10px}
+.eng9-warn{background:#df4b5818;border-right:4px solid var(--eng9-bad);padding:12px 14px;border-radius:10px;font-size:14px}
+.eng9-h4{margin:22px 0 8px;font-size:17px}
+.eng9-tbl-wrap{overflow:auto;border:1px solid var(--eng9-border);border-radius:14px;margin:10px 0}
+.eng9-tbl{width:100%;border-collapse:collapse;background:var(--eng9-surface);font-size:15px;min-width:480px}
+.eng9-tbl th{background:var(--eng9-surface2);padding:10px 12px;text-align:right;font-size:13px;color:var(--eng9-muted)}
+.eng9-tbl td{padding:9px 12px;border-top:1px solid var(--eng9-border)}
+.eng9-tbl .eng9-ltr{direction:ltr;text-align:left;font-family:Arial,sans-serif;font-weight:600;white-space:nowrap}
+
+/* ---------- مکالمه (حباب گفت‌وگو) ---------- */
+.eng9-chat{display:grid;gap:10px;margin:14px 0}
+.eng9-msg{max-width:82%;border:1px solid var(--eng9-border);border-radius:16px;padding:10px 15px;background:var(--eng9-surface);box-shadow:var(--eng9-shadow)}
+.eng9-msg.a{margin-inline-end:auto;border-start-end-radius:4px}
+.eng9-msg.b{margin-inline-start:auto;background:#5b5cf00c;border-start-start-radius:4px}
+.eng9-msg-name{font-size:12px;color:var(--eng9-primary);font-weight:800}
+.eng9-msg-en{direction:ltr;text-align:left;font-family:Arial,sans-serif;font-weight:600}
+.eng9-msg-fa{color:var(--eng9-muted);font-size:14px;border-top:1px dashed var(--eng9-border);margin-top:6px;padding-top:6px}
+
+/* ---------- سؤال‌ها و پاسخ ---------- */
+.eng9-qcard{margin-bottom:13px}
+.eng9-options{display:grid;gap:8px;margin-top:12px}
+.eng9-option{padding:12px 14px;border:2px solid var(--eng9-border);background:var(--eng9-surface2);color:var(--eng9-text);border-radius:10px;cursor:pointer;text-align:right;font:inherit;font-weight:600;transition:.15s;direction:ltr;text-align:left;font-family:Arial,sans-serif}
+.eng9-option:hover{border-color:var(--eng9-primary);background:var(--eng9-surface)}
+.eng9-option.selected{border-color:var(--eng9-primary);background:#5b5cf01c}
+.eng9-option.correct{border-color:var(--eng9-good);background:#18a46a18}
+.eng9-option.wrong{border-color:var(--eng9-bad);background:#df4b5818}
+.eng9-option:disabled{opacity:1}
+.eng9-result{padding:14px;border-radius:12px;background:var(--eng9-surface2);margin-top:15px}
+.eng9-acc-btn{border:1px solid var(--eng9-border);background:var(--eng9-surface2);color:var(--eng9-text);border-radius:10px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px;font-weight:700;margin-top:10px}
+.eng9-acc-btn:hover{border-color:var(--eng9-primary);color:var(--eng9-primary)}
+.eng9-acc-body[hidden]{display:none}
+
+/* ---------- ابزارها ---------- */
+.eng9-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0;align-items:center}
+.eng9-select{padding:10px;border:1px solid var(--eng9-border);border-radius:10px;background:var(--eng9-surface);color:var(--eng9-text);font:inherit}
+.eng9-searchbar{display:flex;gap:8px;margin:0 0 18px;flex-wrap:wrap}
+.eng9-searchbar input{flex:1;min-width:200px;padding:13px 15px;border:1px solid var(--eng9-border);background:var(--eng9-surface);color:var(--eng9-text);border-radius:12px;font:inherit;outline:none}
+.eng9-searchbar input:focus{border-color:var(--eng9-primary)}
+.eng9-pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:25px}
+
+/* ---------- فلش‌کارت واژگان ---------- */
+.eng9-flash{max-width:460px;margin:18px auto;text-align:center;padding:34px 22px;border-radius:19px;border:2px solid var(--eng9-border);background:var(--eng9-surface);box-shadow:var(--eng9-shadow);cursor:pointer;min-height:180px;display:flex;flex-direction:column;justify-content:center;gap:10px;transition:.2s;user-select:none}
+.eng9-flash:hover{border-color:var(--eng9-primary);transform:translateY(-3px)}
+.eng9-flash .eng9-f-en{font-size:32px;font-weight:800;direction:ltr;font-family:Arial,sans-serif}
+.eng9-flash .eng9-f-fa{font-size:21px;color:var(--eng9-primary);font-weight:800;visibility:hidden}
+.eng9-flash.flipped .eng9-f-fa{visibility:visible}
+.eng9-flash .eng9-f-hint{font-size:12px;color:var(--eng9-muted)}
+
+/* ---------- فوتر و دکمه بالا ---------- */
+.eng9-footer{padding:35px 5%;margin-top:35px;border-top:1px solid var(--eng9-border);display:flex;justify-content:space-between;gap:20px;color:var(--eng9-muted);flex-wrap:wrap}
+.eng9-to-top{position:fixed;bottom:20px;left:20px;border:0;border-radius:12px;width:43px;height:43px;background:var(--eng9-primary);color:#fff;cursor:pointer;display:none;z-index:30;font-size:16px}
+.eng9-to-top.show{display:block}
+
+/* ---------- واکنش‌گرا ---------- */
+@media(max-width:900px){
+  .eng9-topbar .eng9-nav{display:none}
+  .eng9-topbar .eng9-nav.eng9-open{display:flex;position:absolute;top:72px;right:0;left:0;padding:10px 4%;background:var(--eng9-surface);border-bottom:1px solid var(--eng9-border);flex-wrap:wrap}
+  .eng9-mobile-only{display:block}
+  .eng9-hero-grid{grid-template-columns:1fr}
+  .eng9-grid{grid-template-columns:repeat(2,1fr)}
+  .eng9-grid3{grid-template-columns:repeat(2,1fr)}
+  .eng9-stats{grid-template-columns:repeat(2,1fr)}
+  .eng9-hero{padding-top:45px}
+  .eng9-tabs{top:72px}
+}
+@media(max-width:600px){
+  .eng9-grid,.eng9-grid3,.eng9-stats{grid-template-columns:1fr}
+  .eng9-topbar{padding:0 4%;gap:10px}
+  .eng9-brand{min-width:0}
+  .eng9-brand small{display:none}
+  .eng9-hero,.eng9-section{padding-left:4%;padding-right:4%}
+  .eng9-hero h1{font-size:34px}
+  .eng9-footer{flex-direction:column}
+  .eng9-card{border-radius:15px}
+  .eng9-msg{max-width:94%}
+}
+@media print{
+  .eng9-topbar,.eng9-footer,.eng9-to-top,.eng9-hero-actions,.eng9-tabs,.eng9-toolbar,.eng9-acc-btn,.eng9-pager{display:none!important}
+  .eng9-section{max-width:none}
+  .eng9-card{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<!-- ================= ماژول زبان انگلیسی پایه نهم ================= -->
+<div id="eng9-module">
+  <header class="eng9-topbar">
+    <a class="eng9-brand" href="#eng9-home">
+      <span class="eng9-brand-logo">En</span>
+      <span><b>زبان انگلیسی پایه نهم</b><small>ماژول آموزشی تعاملی</small></span>
+    </a>
+    <nav class="eng9-nav" id="eng9-nav">
+      <a href="#eng9-home" data-nav="home">خانه</a>
+      <a href="#eng9-lessons" data-nav="lessons">درس‌ها</a>
+      <a href="#eng9-vocab" data-nav="vocab">واژه‌نامه</a>
+      <a href="#eng9-questions" data-nav="questions">نمونه‌سؤال</a>
+      <a href="#eng9-appendix" data-nav="appendix">پیوست افعال</a>
+      <a href="#eng9-about" data-nav="about">درباره</a>
+      <a href="index.html">کلاس نهم</a>
+    </nav>
+    <div class="eng9-actions">
+      <button id="eng9-themeBtn" title="تغییر حالت روشن/تیره">☾</button>
+      <button id="eng9-menuBtn" class="eng9-mobile-only" title="منو">☰</button>
+    </div>
+  </header>
+  <main id="eng9-app"></main>
+  <noscript>
+    <div style="max-width:760px;margin:24px auto;padding:24px;background:#fff;border:1px solid #dde3ed;border-radius:19px;font-family:Tahoma,Arial,sans-serif;line-height:2;text-align:right">
+      <h2 style="margin-top:0;color:#5b5cf0">زبان انگلیسی پایه نهم</h2>
+      <p>برای نمایش محتوای این ماژول آموزشی، JavaScript مرورگر باید فعال باشد.</p>
+      <p>درس‌های این ماژول به ترتیب کتاب عبارت‌اند از: درس ۱ (شخصیت)، درس ۲ (سفر)، درس ۳ (جشن‌ها و مراسم)، درس ۴ (خدمات)، درس ۵ (رسانه) و درس ۶ (سلامتی و آسیب‌ها)؛ هر درس شامل واژگان، گرامر، مکالمه، متن خواندنی، پاسخ تمرین‌های کتاب کار، نکات امتحانی و نمونه‌سؤال است. همچنین واژه‌نامه جامع، پیوست افعال بی‌قاعده و بخش «درباره» در دسترس است.</p>
+    </div>
+  </noscript>
+  <footer class="eng9-footer">
+    <div><b>زبان انگلیسی پایه نهم</b><p>مرور درس‌به‌درس واژگان، گرامر، مکالمه، متن‌های خواندنی، تمرین‌های کتاب کار، نکات امتحانی و نمونه‌سؤال‌ها.</p></div>
+    <div><a href="#eng9-about">درباره</a> · <a href="#eng9-lessons">درس‌ها</a> · <a href="#eng9-vocab">واژه‌نامه</a> · <a href="index.html">صفحه اصلی</a></div>
+  </footer>
+  <button id="eng9-toTop" class="eng9-to-top">↑</button>
+</div>
+<script>
+
+window.ENG9_DATA = {
+meta:{
+  title:"زبان انگلیسی پایه نهم",
+  intro:"این ماژول، مرور کامل و درس‌به‌درسِ زبان انگلیسی پایۀ نهم است: واژگان مهم با معنی فارسی، گرامر با توضیح ساده و مثال‌های کتاب، مکالمه‌ها و عبارات کلیدی با ترجمه، متن‌های خواندنی، پاسخ تمرین‌های کتاب کار، نکات امتحانی و نمونه‌سؤال همراه با پاسخ‌نامه.",
+  audio:"هر دو کتاب مجموعۀ انگلیسی نهم (Prospect 3) به «کتاب گویا» (فایل صوتی) به‌عنوان بخشی از بستۀ آموزشی ارجاع می‌دهند. دریافت کتاب گویا از وب‌گاه رسمی گروه زبان‌های خارجی دفتر تألیف کتاب‌های درسی: eng-dept.talif.sch.ir — تمرین‌های شنیداری کتاب‌ها به همین فایل صوتی وابسته‌اند و متن صدا در کتاب چاپ نشده است؛ در پاسخ‌نامه‌ها صریحاً مشخص شده‌اند.",
+  sources:"برای شفافیت، منبع هر بخش مشخص شده است: «کتاب دانش‌آموز» یعنی محتوا مستقیماً از کتاب دانش‌آموز است، «کتاب کار» یعنی از کتاب کار، و «سؤال تألیفی» یعنی آن سؤال عین سؤال کتاب نیست و فقط بر پایۀ محتوای کتاب برای تمرین ساخته شده است."
+},
+lessons:[
+{
+  id:1, icon:"🙂", title:"شخصیت", en:"Personality",
+  pages:"کتاب دانش‌آموز: صفحات ۱۵ تا ۲۷ | کتاب کار: صفحات ۸ تا ۲۰",
+  intro:"مضمون (Theme) این درس «شخصیت» (Personality) و کنش ارتباطی آن «صحبت دربارۀ شخصیت» (Talking about Personality) است. طبق نقشۀ کتاب (Map of Prospect 3)، گرامر اصلی این درس افعال to be یعنی am / is / are همراه با There is / There are و فرم مخفف آن‌ها است. Language Melody این درس، لحن «افتانی» (Falling Intonation) در جمله‌های خبری دارای to be است. این درس پایۀ صحبت دربارۀ ویژگی‌های آدم‌هاست و در کنارش مجموعه‌ای از صفت‌های شخصیتی معرفی می‌شود که در سراسر کتاب و در آزمون‌ها پرکاربرد است.",
+  vocab:[
+    ["angry","عصبانی","صفت"],["brave","شجاع","صفت"],["careless","بی‌دقت، بی‌احتیاط","صفت"],
+    ["cruel","بی‌رحم، ستمگر","صفت"],["funny","بامزه، خنده‌دار","صفت"],["neat","مرتب و پاکیزه","صفت"],
+    ["nervous","مضطرب، عصبی","صفت"],["quiet","کم‌حرف، ساکت","صفت"],["rude","بی‌ادب","صفت"],
+    ["selfish","خودخواه","صفت"],["hard-working","سخت‌کوش، کوشا","صفت"],["lazy","تنبل","صفت"],
+    ["shy","خجالتی","صفت"],["generous","بخشنده، دست‌ودلباز","صفت"],["clever","باهوش","صفت"],
+    ["kind","مهربان","صفت"],["helpful","خیّر، کمک‌گر، مفید","صفت"],["talkative","پرحرف","صفت"],
+    ["patient","صبور","صفت"],["polite","مؤدب","صفت"],["careful","دقیق، مواظب","صفت"],
+    ["upset","ناراحت، دلخور","صفت"],["serious","جدی","صفت"]
+  ],
+  grammar:[
+    {title:"۱) فعل to be (am / is / are) — مثبت",
+     body:["این فعل بسته به فاعل سه شکل دارد: با I از am و با فاعل مفرد سوم شخص (he / she / it) و اسم مفرد با is و با we / you / they و هر جمعی از are استفاده می‌کنیم. مثال‌های کتاب:"],
+     examples:[["I am a teacher.","من معلم هستم."],["Ali is clever.","علی باهوش است."],["It is red.","آن قرمز است."],["Zahra and Nadia are generous.","زهرا و نادی بخشنده‌اند."]],
+     notes:[["منفی","کافی است not را بعد از فعل بیاوریم: I am not talkative. / He is not shy. / They are not rude."],
+            ["پرسشی","فعل به اول جمله می‌آید: Am I ...? / Is he ...? / Are they ...? — مثال کتاب: Are you hard-working? — Yes, I am. / Is Zahra talkative? — No, she isn't."]]},
+    {title:"۲) فرم مخفف (Contraction)",
+     body:["در گفتار و نوشتار غیررسمی، to be معمولاً مخفف می‌شود. این فرم‌ها در تمرین ویرایش متن‌های کتاب کار بسیار مهم‌اند."],
+     table:{head:["شکل کامل","شکل مخفف"],rows:[
+       ["I am = I'm","He is = He's"],["It is = It's","We are = We're"],
+       ["You are = You're","They are = They're"],["He is not = He's not = He isn't","They are not = They're not = They aren't"]]}},
+    {title:"۳) There is / There are",
+     body:["برای بیان «وجود داشتن» چیزی به کار می‌رود: با اسم مفرد از There is و با اسم جمع از There are استفاده می‌شود. مثال‌های کتاب:"],
+     examples:[["There is an eraser in the classroom.","در کلاس یک پاک‌کن هست."],["There are two/three/many/some students.","دو/سه/خیلی/چند دانش‌آموز هستند."],["Is there an apple on the table? — Yes, there is.","روی میز سیبی هست؟ — بله، هست."],["There aren't (are not) many tourists in this city.","در این شهر توریست‌های زیادی نیست."]]},
+    {title:"۴) لحن جمله‌های خبری (Language Melody)",
+     body:["در این درس، جمله‌های خبری دارای to be با لحن افتانی (Falling Intonation) خوانده می‌شوند؛ یعنی صدای گوینده در پایان جمله پایین می‌آید. جمله‌های تمرینی کتاب:"],
+     list:["He's very kind.","She's very patient.","You are very clever.","Everybody likes her.","I do my homework.","She works for a company."]}
+  ],
+  conv:{
+    title:"مکالمۀ درس (Conversation) — گفت‌وگوی احسان و پرهام",
+    src:"کتاب دانش‌آموز",
+    lines:[
+      ["Ehsan","Who is your best friend at school?","بهترین دوستت در مدرسه کیست؟"],
+      ["Parham","Reza.","رضا."],
+      ["Ehsan","What's he like?","او چه شخصیتی دارد؟"],
+      ["Parham","Oh, he is really great! He's clever and kind.","اوه، او واقعاً عالی است! باهوش و مهربان است."],
+      ["Ehsan","Is he hard-working too?","آیا او سخت‌کوش هم هست؟"],
+      ["Parham","Yes! And he's always very helpful.","بله! و همیشه خیلی کمک‌گر است."],
+      ["Ehsan","How?","چطور؟"],
+      ["Parham","He always helps me with my lessons.","همیشه در درس‌هایم به من کمک می‌کند."]
+    ],
+    phrases:[["Are you hard-working? — Yes, I am.","آیا سخت‌کوشی؟ — بله."],
+             ["What's your friend like? — He's very funny.","دوستت چه شخصیتی دارد؟ — خیلی بامزه است."],
+             ["Let me check it in the dictionary.","اجازه بده آن را در فرهنگ لغت بررسی کنم."]],
+    note:"نکتۀ تمرین‌های Practice: الگوی What + is + فاعل + like? برای پرسیدن دربارۀ شخصیت به کار می‌رود؛ این پرسش دربارۀ ظاهر نیست. پاسخ تمرین‌های ۱ و ۲ Practice (مثل What's your mother like? — She's very kind and patient.) نیز با همین الگوها ساخته شده است."
+  },
+  reading:{
+    title:"متن خواندنی کتاب: معرفی محسن و بهترین دوستش",
+    src:"کتاب دانش‌آموز",
+    en:"I'm Mohsen. This is my classroom. There are 25 students in my class. I have a lot of friends. My best friend is Vahid. He's a good student. He is helpful and hard-working, but he is not very careful. He usually forgets important things. It's a big problem.",
+    fa:"من محسن هستم. این کلاسِ من است. ۲۵ دانش‌آموز در کلاسم هستند. دوستان زیادی دارم. بهترین دوستم وحید است. او دانش‌آموز خوبی است. او خیّر و سخت‌کوش است، اما خیلی دقیق نیست. او معمولاً چیزهای مهم را فراموش می‌کند. این یک مشکل بزرگ است.",
+    notes:["تمرین Find it: کتاب همین متن را برای پیدا کردن و زیر خط کشیدن افعال to be دارد (I'm, is, are, He's, He is, is not, It's).",
+           "تمرین Tell Your Classmates: از شما می‌خواهد پنج جمله دربارۀ خودتان و خانواده‌تان بگویید؛ مثال خود کتاب: My sister is really kind.",
+           "تمرین Listening A کتاب (پر کردن جدول نام و شخصیت) و Listening B (ایران و مردم ایران) به فایل صوتی وابسته است؛ متن صدا در کتاب چاپ نشده است."]
+  },
+  workbook:[
+    {t:"تمرین ۱ — انتخاب گزینۀ صحیح",src:"کتاب کار، ص ۸",body:[],ans:["1. Kate isn't funny.","2. There is a car in the street.","3. There are fifteen benches in the class.","4. It is really beautiful.","5. Iranians are very brave."],ansKind:"پاسخ"},
+    {t:"تمرین ۲ — پر کردن جاهای خالی با افعال to be",src:"کتاب کار، ص ۹",body:[],ans:["I am 14 years old. My school is beautiful. There are 30 students in my class. My classmates are clever and friendly. He is hard-working but he isn't nervous at all. He's very kind and patient."],ansKind:"پاسخ",note:"جملۀ نخست «I am Ali Rasooli» در خود کتاب حل شده است."},
+    {t:"تمرین ۳ — مرتب کردن جملات (Unscramble)",src:"کتاب کار، ص ۱۰",body:[],ans:["1. I am not nervous.","2. You and your friend are not selfish.","3. Is Mina careless?","4. There are two rooms in our house.","5. Is there an orange on the table?"],ansKind:"پاسخ"},
+    {t:"تمرین ۴ — وصل کردن جملات به تصاویر",src:"کتاب کار، ص ۱۱",img:true,body:["جملات این تمرین: My teacher is kind. / The man is cruel. / The girl is quiet. / They are not neat. / There is a book on the desk. / There are five students in the classroom."],ans:[],ansKind:"",note:"این تمرین به تصاویر کتاب کار وابسته است؛ جمله‌ها را باید به تصویر متناظرشان وصل کنید. پاسخ عددی بدون دیدن تصویر قابل تعیین نیست و حدس زده نمی‌شود."},
+    {t:"تمرین ۵ — نوشتن جمله برای هر تصویر",src:"کتاب کار، ص ۱۲",img:true,body:["نمونۀ حل‌شدۀ کتاب: She is angry."],ans:["She is brave. / She is quiet. / They are funny. / He is nervous. / She is talkative — بقیۀ جمله‌ها بسته به تصویر نوشته می‌شوند؛ نمونه‌های سازگار با صفت‌های درس."],ansKind:"نمونه پاسخ"},
+    {t:"تمرین ۶ — جست‌وجوی کلمات + ستون مثبت/منفی + کامل کردن جمله‌ها",src:"کتاب کار، ص ۱۳–۱۴",body:["الف) شش کلمۀ جدول (تأییدشده به‌صورت دقیق): ANGRY — BRAVE — CARELESS — SHY — NEAT — CLEVER"],ans:["ب) ستون‌بندی — Positive (مثبت): clever, brave, neat — Negative (منفی): angry, careless, shy","پ) کامل کردن جمله‌ها: 1. My little brother is quiet. 2. The waiter is very neat. 3. He is a hard-working student. 4. Jack is a careless driver."],ansKind:"پاسخ"},
+    {t:"تمرین ۷ — ویرایش متن (۴ غلط): معرفی مریم بختیاری",src:"کتاب کار، ص ۱۵",body:[],ans:["Im → I'm | People of my city is → are very kind. | there is → are many tourists. | My brothers is → are very helpful.","متن اصلاح‌شده: I'm Maryam Bakhtiari. I am 13 years old. I live in Shahr-e-Kord. People of my city are very kind. In spring and summer there are many tourists in Shahr-e-Kord. They like our city very much. My brothers are very helpful to the tourists. They help them visit the city."],ansKind:"پاسخ"},
+    {t:"تمرین ۸ — نوشتن چند جمله دربارۀ خود و خانواده",src:"کتاب کار، ص ۱۶",body:[],ans:["I am Amir. I am 14 years old. I live in Isfahan. My mother is kind and patient. My father is hard-working. My little sister is talkative but very funny. My best friend is quiet and helpful."],ansKind:"نمونه پاسخ"},
+    {t:"تمرین ۹ — بله یا خیر؟",src:"کتاب کار، ص ۱۷",body:[],ans:["پاسخ‌ها نظری (بر اساس واقعیت) است؛ پاسخ منطقی: 1. بله (Mothers are kind.) — 2. بله (Iranian people are hard-working.) — 3. خیر (Actors are shy.) — 4. بله (Waiters are neat.) — 5. خیر (Best friends are cruel.)"],ansKind:"پاسخ نمونه"},
+    {t:"تمرین ۱۰ — متن اینو هیتاچی (ژاپن): زیر خط کشیدن to be، پاسخ کوتاه و بازنویسی",src:"کتاب کار، ص ۱۸",body:[],ans:["الف) افعال to be متن: I'm / am / am / are / are / are","ب) پاسخ پرسش‌ها: 1. He is 14 (years old). 2. He is from Japan. 3. They are very kind and hard-working (they are also busy and serious). 4. Yes, there are (many cities and villages in Japan).","پ) بازنویسی متن دربارۀ خودتان (نمونه): I'm Sara. I am 14 years old. I am Iranian. I live in Shiraz. People of my country are kind and hard-working ..."],ansKind:"پاسخ"}
+  ],
+  exam:[
+    "در جمله‌های منفی با to be هرگز از don't / doesn't استفاده نمی‌شود؛ منفی آن با not ساخته می‌شود: He isn't shy.",
+    "There is با اسم مفرد و There are با اسم جمع به کار می‌رود؛ این نکته در تست‌ها و تمرین ویرایش بسیار پرتکرار است (مثل غلط there is many tourists در تمرین ۷ کتاب کار).",
+    "الگوی What's he/she like? یعنی «او چه شخصیتی دارد؟» و پاسخ آن صفت شخصیت است، نه ظاهر.",
+    "صفت‌ها بعد از فعل to be می‌آیند و هرگز جمع نمی‌شوند (They are kind، نه kinds).",
+    "فرم‌های مخفف (I'm, he's, they're, isn't, aren't, there's) در مکالمه، شنیدار و ویرایش متن‌ها کلیدی‌اند.",
+    "برای فاعل جمع (مثل Iranians, my brothers, people) همیشه are بیاورید — رایج‌ترین غلط در متن‌های ویرایشی کتاب کار همین است."
+  ],
+  questions:[
+    {q:"Sara and her sister ...... kind and helpful.",mcq:["is","am","are","be"],ans:2,ex:"فاعل «Sara and her sister» جمع است؛ پس گزینۀ are."},
+    {q:"...... there a gift shop near your house?",mcq:["Are","Is","Am","Do"],ans:1,ex:"بعد از There با اسم مفرد (a gift shop) فعل Is می‌آید."},
+    {q:"شکل منفیِ مخفف جمله را بنویسید: They are selfish.",wa:["They aren't (are not) selfish."],ex:"برای منفی کردن to be کافی است not را بعد از فعل بیاوریم."},
+    {q:"جملۀ زیر را مرتب کنید: ? / like / what / your / is / brother",wa:["What is your brother like? — الگوی پرسش دربارۀ شخصیت."],ex:"الگوی پرسش شخصیت: What + is + فاعل + like?"},
+    {q:"به پرسش زیر پاسخ کامل بدهید: What's your mother like?",wa:["نمونه: She is kind and patient. — هر صفت شخصیت مناسبی درست است."],ex:"پاسخ این پرسش صفت شخصیت است، نه ظاهر."},
+    {q:"غلط جمله را پیدا و اصلاح کنید: My classmates is very clever.",wa:["My classmates are very clever. — «My classmates is» غلط است؛ فاعل جمع است."],ex:"فاعل جمع همیشه are می‌گیرد."}
+  ]
+},
+{
+  id:2, icon:"✈️", title:"سفر", en:"Travel",
+  pages:"کتاب دانش‌آموز: صفحات ۲۹ تا ۴۱ | کتاب کار: صفحات ۲۱ تا ۳۴",
+  intro:"مضمون این درس «سفر» (Travel) و کنش ارتباطی آن «صحبت دربارۀ سفر» (Talking about Travel) است. طبق نقشۀ کتاب، گرامر این درس زمان حال استمراری (Present Continuous Tense) و ساختار ملکی 's و of است و در بخش Language Melody با لحن «افتانی/خیزانی» پرسش‌های Yes/No دارای to be کار می‌کنیم. در این درس موقعیت‌های واقعی سفر — هتل، فرودگاه، خرید بلیط و رزرو اتاق — زبانِ کاربردی دارد و واژگان آن همگی عبارت‌های فعالی مربوط به سفرند.",
+  vocab:[
+    ["buy a ticket","بلیط خریدن","عبارت"],["check the timetable","جدول زمانی (اتوبوس/قطار/هواپیما) را بررسی کردن","عبارت"],
+    ["check the passport","گذرنامه را بررسی کردن","عبارت"],["check in","پذیرش/ثبت‌نام کردن (در هتل یا فرودگاه)","عبارت"],
+    ["take off","برخاستن (هواپیما)","عبارت"],["land","فرود آمدن","فعل"],
+    ["exchange money","پول را تبدیل کردن (صرافی)","عبارت"],["fill out the form","فرم را پر کردن","عبارت"],
+    ["talk to a receptionist","با متصدی پذیرش صحبت کردن","عبارت"],["pack for a trip","برای سفر چمدان‌بندی کردن","عبارت"],
+    ["book a hotel","هتل (اتاق) رزرو کردن","عبارت"],["weigh the baggage","وزن کردن بار و چمدان (تصویرنامه)","عبارت"],
+    ["baggage reclaim","محل تحویل بار (تصویرنامه)","اسم"],["board the plane","سوار هواپیما شدن (تصویرنامه)","عبارت"],
+    ["make a voyage","سفر دریایی کردن (تصویرنامه)","عبارت"],["take an express train","قطار سریع‌السیر سوار شدن (تصویرنامه)","عبارت"],
+    ["pay toll","عوارض جاده پرداخت کردن (تصویرنامه)","عبارت"],["reservation","رزرو، پیش‌بینی (اتاق/بلیط)","اسم"],
+    ["flight","پرواز","اسم"],["tourist","گردشگر، توریست","اسم"],
+    ["gift shop","فروشگاه هدیۀ/سوغات","اسم"],["guide book","کتاب راهنمای سفر","اسم"]
+  ],
+  grammar:[
+    {title:"۱) حال استمراری (Present Continuous)",
+     body:["برای کاری که همین الان در حال انجام است. ساختار: فاعل + am/is/are + فعل + ing. مثال‌های کتاب:"],
+     examples:[["I am speaking English.","من در حال صحبت کردن به انگلیسی هستم."],["He is buying a ticket.","او در حال خرید بلیط است."],["They are traveling by train.","آن‌ها در حال سفر با قطار هستند."],["I'm filling out the reservation form.","من در حال پر کردن فرم رزرو هستم."]],
+     notes:[["منفی","not بعد از فعل کمکی می‌آید: I am not speaking Persian. / She is not writing a letter. / She isn't writing a letter."],
+            ["پرسش بله/خیر","فعل کمکی به اول جمله می‌آید: Is Sara booking online? / Are you visiting Iran?"]]},
+    {title:"۲) پرسش‌های Wh در حال استمراری",
+     body:["کلمۀ پرسشی + فعل کمکی + فاعل + فعل + ing؛ مثال‌های تمرین کتاب:"],
+     list:["What is she playing?","Who is speaking to the teacher?","Where is Ali going?","How are they traveling?"]},
+    {title:"۳) ساختار ملکی 's و of",
+     body:["برای نشان دادن مالکیت، به اسم جان‌دار (آدم/حیوان) 's اضافه می‌کنیم و برای اسم بی‌جان از ساختار of استفاده می‌شود. مثال‌های کتاب:"],
+     table:{head:["با 's","با of"],rows:[
+       ["Kate's scarf (شال کیت)","The wheels of the car (چرخ‌های ماشین)"],
+       ["Jack's shirt (پیراهن جک)","The legs of the chair (پایه‌های صندلی)"],
+       ["Teachers' office (اتاق معلم‌ها)","The door of the room (درِ اتاق)"]]}},
+    {title:"۴) لحن پرسش‌های Yes/No (Language Melody)",
+     body:["پرسش‌های بله/خیریِ دارای to be با لحن خیزانی (Rising Intonation) خوانده می‌شوند؛ یعنی صدای گوینده در پایان پرسش بالا می‌رود. جمله‌های تمرینی کتاب:"],
+     list:["Is it a beautiful country?","Is he a tourist?","Are you staying here?","Is she searching for a hotel?","Are you traveling to Shiraz?","Are they checking out?"]}
+  ],
+  conv:{
+    title:"مکالمۀ درس (Conversation) — گفت‌وگوی گردشگر آلمانی و متصدی پذیرش هتل",
+    src:"کتاب دانش‌آموز",
+    lines:[
+      ["Receptionist","Welcome to our hotel sir, how can I help you?","به هتل ما خوش آمدید آقا، چه کمکی از من برمی‌آید؟"],
+      ["Tourist","My name is Paul Kress. I'm from Germany. I have a reservation here.","اسم من پل کرس است. من آلمانی‌ام. اینجا رزرو دارم."],
+      ["Receptionist","I see! Are you staying here for two nights?","فهمیدم! می‌خواهید دو شب اینجا بمانید؟"],
+      ["Tourist","Yes, my wife and I are visiting Tehran for three days.","بله، من و همسرم سه روز به تهران سفر می‌کنیم."],
+      ["Receptionist","Where is she now? I need to check her passport.","او الان کجاست؟ باید گذرنامه‌اش را بررسی کنم."],
+      ["Tourist","She's standing over there, by the gift shop. Here is her passport.","او آن‌جا کنار فروشگاه هدیه ایستاده است. این هم گذرنامه‌اش."],
+      ["Receptionist","Thank you. This is your key. It's room 213. Hope you enjoy your stay in Tehran.","متشکرم. این هم کلید شما؛ اتاق ۲۱۳ است. امیدوارم اقامتتان در تهران خوش بگذرد."]
+    ],
+    phrases:[["Are you visiting Tehran? — Yes, I am.","آیا به تهران سفر می‌کنی؟ — بله."],
+             ["Who is speaking English now? — Sara.","چه کسی الان انگلیسی صحبت می‌کند؟ — سارا."],
+             ["I'm interested in ..., How about you?","من به ... علاقه‌مندم، تو چطور؟"]],
+    note:""
+  },
+  reading:{
+    title:"متن خواندنی کتاب: پل، گردشگر آلمانی",
+    src:"کتاب دانش‌آموز",
+    en:"This is Paul. He is a tourist from Germany. He's going into a gift shop with his wife. They are opening the door of the shop. Now, they're talking to the shopkeeper to find suitable gifts for their daughters. Paul's daughters are living in Spain now.",
+    fa:"این پل است. او گردشگری از آلمان است. او با همسرش دارد وارد یک فروشگاه هدیه می‌شود. آن‌ها دارند درِ فروشگاه را باز می‌کنند. حالا دارند با مغازه‌دار صحبت می‌کنند تا هدیه‌های مناسبی برای دخترانشان پیدا کنند. دختران پل الان در اسپانیا زندگی می‌کنند.",
+    notes:["تمرین Find it کتاب: متن مشابهی با جملۀ نمونۀ «I guess my brother is praying now.» دارد و از شما می‌خواهد پنج فعالیت حدسی دربارۀ اعضای خانواده‌تان بگویید (Tell Your Classmates).",
+           "تمرین‌های Listening A (برندا و وب‌سایت) و Listening B (مهمت) به فایل صوتی وابسته‌اند و متن صدا در کتاب چاپ نشده است.",
+           "در Role Play باید نقش گردشگر و متصدی پذیرش را مطابق مکالمۀ درس اجرا کنید."]
+  },
+  workbook:[
+    {t:"تمرین ۱ — انتخاب گزینۀ صحیح (حال استمراری)",src:"کتاب کار، ص ۲۲",body:[],ans:["1. My brother and I are checking the website.","2. The tourist is buying gifts.","3. The officer is checking the passports.","4. John and his wife are staying here for three days."],ansKind:"پاسخ"},
+    {t:"تمرین ۲ — کامل کردن جملات با حال استمراری",src:"کتاب کار، ص ۲۲",body:[],ans:["1. I am traveling to Mashhad.","2. Brenda is booking a room online.","3. They are washing their car now.","4. We are exchanging money at the airport."],ansKind:"پاسخ"},
+    {t:"تمرین ۳ — مرتب کردن جملات",src:"کتاب کار، ص ۲۳",body:[],ans:["1. The tourist is filling out a reservation form.","2. Is your brother checking the map?","3. What are your little brothers doing now?","4. My friend's father is traveling now."],ansKind:"پاسخ"},
+    {t:"تمرین ۴ — نوشتن عبارت برای هر تصویر (تمرین ملکی)",src:"کتاب کار، ص ۲۴",img:true,body:["نمونۀ حل‌شدۀ کتاب: 1. Zahra's bag — 2. The map of Iran (مثلاً)"],ans:["ادامۀ موارد ۳ تا ۶ نیز همین الگو را با تصاویر کتاب دارد؛ بدون تصویر، پاسخ قطعی‌اش قابل تعیین نیست."],ansKind:"نمونه پاسخ",note:"این تمرین با تصاویر کار می‌کند و ساختار 's و of را تمرین می‌دهد."},
+    {t:"تمرین ۵ — نوشتن جملۀ حال استمراری برای هر تصویر",src:"کتاب کار، ص ۲۵",img:true,body:["سرنخ‌های کتاب برای موارد ۱ تا ۶:"],ans:["He is checking the timetable. / She is shopping. / He is filling out a form. / They are checking in a hotel. / She is going to the airport. / They are traveling by train."],ansKind:"نمونه پاسخ"},
+    {t:"تمرین ۶ — جست‌وجوی کلمات سفر + ستون فعل/اسم + جمله‌سازی",src:"کتاب کار، ص ۲۷",body:["الف) شش کلمۀ جدول (تأییدشده): PACK — TICKET — PASSPORT — LAND — BOOK — AIRPORT"],ans:["ب) ستون‌بندی — Verb (فعل): pack, book, land — Noun (اسم): ticket, passport, airport","پ) جمله‌های نمونه: I buy a ticket before the trip. / Please check your passport. / The plane will land soon. / We book a hotel online. / Pack your bag now. / The airport is very big."],ansKind:"پاسخ"},
+    {t:"تمرین ۷ — ویرایش متن (۴ غلط): خانم کرس در فروشگاه هدیه",src:"کتاب کار، ص ۲۸–۲۹",body:[],ans:["She is Paul wife → Paul's wife. | She is stand → standing at a gift shop. | The door the shop → of the shop is not open. | Mrs. Kress wearing → is wearing a scarf and a manteau.","متن اصلاح‌شده: This is Mrs. Kress. She is Paul's wife. She is standing at a gift shop. The door of the shop is not open. Mrs. Kress is wearing a scarf and a manteau. She wants to buy some gifts for her family."],ansKind:"پاسخ"},
+    {t:"تمرین ۸ — مرتب کردن تصاویر سفر یک خانواده + جمله‌سازی",src:"کتاب کار، ص ۲۹–۳۰",img:true,body:["الف) ترتیب زمانی درست (بر اساس روند واقعی سفرِ آموخته‌شده در درس):"],ans:["1. buy a ticket → 2. go to the airport → 3. take off → 4. land → 5. check in (a hotel) → 6. talk to (the receptionist)","ب) جمله‌های نمونه: 1. They buy a ticket. 2. They go to the airport. 3. The plane takes off. 4. The plane lands. 5. They check in a hotel. 6. They talk to the receptionist."],ansKind:"پاسخ"},
+    {t:"تمرین ۹ — کامل کردن جملات دربارۀ خودتان (ساعت‌ها)",src:"کتاب کار، ص ۳۱",body:["نمونۀ حل‌شدۀ کتاب: It's 5:30 a.m. Now I am praying."],ans:["It's 6 a.m. Now I am praying / having breakfast. | It's 1 p.m. I am eating lunch now. | It's 5 p.m. Now I am doing my homework. | It's 10 p.m. I am sleeping now."],ansKind:"نمونه پاسخ"},
+    {t:"تمرین ۱۰ — مکالمۀ فرنک و سم: زیر خط کشیدن حال استمراری + بله/خیر + پاسخ",src:"کتاب کار، ص ۳۲–۳۳",body:[],ans:["الف) جمله‌های حال استمراری مکالمه: the fan of my laptop is not working / It's making a noise / My brother is working on it","ب) بله یا خیر: 1. خیر (Frank is not traveling to Berlin; Sam می‌خواهد برود برلین.) — 2. بله — 3. بله (پرواز ساعت ۵:۳۰) — 4. خیر (برادر سم روی لپ‌تاپ کار می‌کند، نه پدرش.)","پ) پاسخ پرسش‌ها: 1. The fan of his laptop is not working (it's making a noise). 2. Sam's brother. 3. He is traveling by plane (he has a flight). 4. No, it is not serious (Frank: \"I think it is not serious.\")"],ansKind:"پاسخ"}
+  ],
+  exam:[
+    "ساختار حال استمراری: am/is/are + فعل + ing؛ یادتان باشد فعل کمکی را فراموش نکنید — غلط رایج در تمرین ویرایش کتاب کار: She is stand به جای She is standing یا Mrs. Kress wearing.",
+    "در تمرین ویرایش، ملکی 's برای آدم‌ها (Paul's wife) و of برای اشیاء (the door of the shop) نقطۀ سؤال است.",
+    "جملۀ خبری حال استمراری برای «الان» است؛ با قیدهایی مثل now, right now می‌آید.",
+    "در پرسش Wh استمراری، کلمۀ پرسشی اول می‌آید: What are you doing now?",
+    "لحن پرسش‌های Yes/No خیزانی (بالا می‌رود) و جمله‌های خبری افتانی است — در درس ۱ و ۲ این تمایز مدام تمرین می‌شود.",
+    "واژگان سفر (buy a ticket, take off, land, check in, book a hotel...) را با معنی فارسی حفظ کنید؛ در تصویرنامه و تست واژگان می‌آید."
+  ],
+  questions:[
+    {q:"Listen! The baby ...... now.",mcq:["sleep","sleeps","is sleeping","sleeping"],ans:2,ex:"با «now» و «Listen!» حال استمراری لازم است — گزینۀ is sleeping."},
+    {q:"...... they traveling to Shiraz by train?",mcq:["Is","Are","Do","Am"],ans:1,ex:"فاعل جمع (they) در حال استمراری Are می‌گیرد."},
+    {q:"Ali is going to Mehrabad Airport. (پرسش Wh بسازید)",wa:["Where is Ali going?"],ex:"کلمۀ پرسشی + فعل کمکی + فاعل + فعل + ing."},
+    {q:"شکل ملکی بنویسید: the bag / my sister",wa:["my sister's bag — چون «my sister» اسم جان‌دار است."],ex:"برای اسم جان‌دار از 's استفاده می‌کنیم."},
+    {q:"غلط جمله را اصلاح کنید: My father is read a newspaper now.",wa:["My father is reading a newspaper now. — بعد از is فعل باید +ing بگیرد."],ex:"ساختار حال استمراری: am/is/are + فعل + ing."},
+    {q:"به پرسش پاسخ کوتاه بدهید: Are you visiting Isfahan? — Yes, ......",wa:["Yes, I am."],ex:"پاسخ کوتاه با همان فعل کمکی ساخته می‌شود."}
+  ]
+},
+
+{
+  id:3, icon:"🎉", title:"جشن‌ها و مراسم", en:"Festivals and Ceremonies",
+  pages:"کتاب دانش‌آموز: صفحات ۴۹ تا ۶۱ | کتاب کار: صفحات ۳۵ تا ۵۲",
+  intro:"مضمون این درس «جشن‌ها و مراسم» (Festivals and Ceremonies) است و دربارۀ اعیاد و آیین‌های ایرانی و جهانی — نوروز، شب یلدا، عید فطر و مانند آن‌ها — صحبت می‌کند. کنش ارتباطی درس «صحبت دربارۀ جشن‌ها و مراسم» است. طبق نقشۀ کتاب، گرامر اصلی این درس زمان حال ساده با do/does و صفت‌های ملکی (my, your, his, her, its, our, their) است و در Language Melody با لحن خیزانیِ پرسش‌های do/does کار می‌کنیم. عبارت‌های فعلی این درس (آشپزی، چیدن میز، برپا کردن مراسم و...) مبنای بسیاری از سؤال‌های واژگانی است.",
+  vocab:[
+    ["make lunch / dinner","ناهار/شام درست کردن","عبارت"],["sing the national anthem","سرود ملی خواندن","عبارت"],
+    ["bake a cake","کیک پختن","عبارت"],["set the table","میز را چیدن","عبارت"],
+    ["hold a ceremony","مراسم برپا کردن","عبارت"],["watch fireworks","آتش‌بازی تماشا کردن","عبارت"],
+    ["read poems of Hafez","اشعار حافظ را خواندن (فال حافظ گرفتن)","عبارت"],["clear the table","میز را جمع کردن / برچیدن","عبارت"],
+    ["go out on Nature Day","روز طبیعت (۱۳ بدر) بیرون رفتن","عبارت"],["wear special clothes","لباس ویژه/خاص پوشیدن","عبارت"],
+    ["celebrate a religious holiday","جشن گرفتن یک عید مذهبی (تصویرنامه)","عبارت"],["watch military parade","تماشای رژۀ نظامی (تصویرنامه)","عبارت"],
+    ["commemorate NE martyrs","گرامیداشت شهیدان انرژی هسته‌ای (تصویرنامه)","عبارت"],["Islamic-Iranian culture","فرهنگ اسلامی-ایرانی (تصویرنامه)","اسم"],
+    ["Islamic revolution anniversary","سالگرد انقلاب اسلامی (تصویرنامه)","اسم"],["relatives","بستگان","اسم"],
+    ["New Year gifts","هدایای سال نو","اسم"],["fireworks","آتش‌بازی","اسم"],
+    ["national anthem","سرود ملی","اسم"]
+  ],
+  grammar:[
+    {title:"۱) حال ساده با do / does",
+     body:["در حال ساده، فعل با فاعل سوم شخص مفرد (he / she / it) s می‌گیرد؛ در بقیۀ موارد بدون s است. برای منفی و پرسشی از do / does استفاده می‌شود و در این حالت s از فعل حذف می‌شود. مثال‌های کتاب:"],
+     table:{head:["مثبت","منفی","پرسش"],rows:[
+       ["We study English.","I don't play tennis.","Do you buy new clothes?"],
+       ["Yasin reads a newspaper.","Zahra doesn't wash the dishes.","Does he recite the Holy Quran?"],
+       ["Ali watches TV.","She doesn't make a special food.","Do they set the table?"]]},
+     notes:[["نکتۀ کلیدی","بعد از does/doesn't فعل بدون s می‌آید (Does Tim go ...?، نه goes)."]]},
+    {title:"۲) صفت‌های ملکی (Possessive Adjectives)",
+     body:["قبل از اسم می‌آیند و نشان می‌دهند چیزی متعلق به چه کسی است. جدول کتاب:"],
+     table:{head:["فاعل","صفت ملکی","مثال کتاب"],rows:[
+       ["I","my","I wear my new clothes on New Year's Day."],
+       ["you","your","Is that your book?"],
+       ["he","his","Parsa likes his grandmother a lot."],
+       ["she","her","She loves her colorful dress."],
+       ["it","its","We have a ceremony. Its name is Fitr."],
+       ["we","our","Our house is really big."],
+       ["they","their","Their mother isn't home."]]}},
+    {title:"۳) لحن پرسش‌های do/does (Language Melody)",
+     body:["پرسش‌های بله/خیریِ دارای do/does با لحن خیزانی خوانده می‌شوند. جمله‌های تمرینی کتاب:"],
+     list:["Do you like rainy weather?","Does it rain a lot in Tehran?","Does she cook lunch?","Do you tell stories?","Does he like spring?","Does she eat nuts?"]}
+  ],
+  conv:{
+    title:"مکالمۀ درس (Conversation) — گفت‌وگوی الهام و نسرین دربارۀ تعطیلات نوروز",
+    src:"کتاب دانش‌آموز",
+    lines:[
+      ["Elham","I just love New Year holidays!","من عاشق تعطیلات سال نوّم!"],
+      ["Nasrin","Oh, yes, me too. It's really great.","آه، بله، من هم همین‌طور. واقعاً عالی است."],
+      ["Elham","We normally visit our relatives in Norooz. It's fun!","ما معمولاً در نوروز به دیدن بستگانمان می‌رویم. خیلی باحال است!"],
+      ["Nasrin","Do you get New Year gifts too?","هدیۀ سال نو هم می‌گیرید؟"],
+      ["Elham","Sure! We usually get money. I really like it.","البته! معمولاً پول می‌گیریم. خیلی دوستش دارم."],
+      ["Nasrin","Well..., We always go to my grandparents' houses.","خب... ما همیشه به خانۀ پدربزرگ و مادربزرگ‌هایمان می‌رویم."],
+      ["Elham","That's nice! Does your grandmother cook the New Year meal?","چه خوب! آیا مادربزرگتان غذای سال نو را می‌پزد؟"],
+      ["Nasrin","Actually, she doesn't. My mother makes it.","در واقع نه. مادرم آن را درست می‌کند."]
+    ],
+    phrases:[["Do you buy new clothes for the New Year? — Yes, I do.","برای سال نو لباس نو می‌خری؟ — بله."],
+             ["Does he recite the Holy Quran at the turn of the year? — Yes, he does.","آیا او سر سال قرآن می‌خواند؟ — بله."],
+             ["Wish you a great holiday! / Happy New Year.","تعطیلات عالی‌ای داشته باشی! / سال نو مبارک."]],
+    note:""
+  },
+  reading:{
+    title:"متن خواندنی کتاب (Find it): احمد از ترکیه و عید فطر",
+    src:"کتاب دانش‌آموز",
+    en:"Ahmed is from Turkey and he lives in Istanbul. Fitr Eid is an important religious holiday in his country. He likes this day a lot. It's on the first day of Shawwal. On Fitr Eid, Muslims don't fast. They say their Eid prayers before noon. In all Muslim countries people hold the same ceremony.",
+    fa:"احمد اهل ترکیه است و در استانبول زندگی می‌کند. عید فطر یک عید مذهبی مهم در کشور اوست. او این روز را خیلی دوست دارد. عید فطر در نخستین روز ماه شوال است. در عید فطر مسلمانان روزه نمی‌گیرند. آن‌ها نماز عیدشان را قبل از ظهر می‌خوانند. در همۀ کشورهای اسلامی مردم مراسم یکسانی برپا می‌کنند.",
+    notes:["تمرین Find it: از شما خواسته شده در این متن فعل‌های «حال ساده» (is, lives, likes, don't fast, say, hold) و «صفت‌های ملکی» (his, their) را زیر خط بکشید.",
+           "تمرین Listening A (شب یلدا: چه می‌خورند و چه چیزی گوش می‌دهند؟) و Listening B (سال نو، لباس‌ها و هدیۀ بزرگ‌ترها) به فایل صوتی وابسته است و متن صدا در کتاب چاپ نشده.",
+           "در کتاب کار، متن کامل‌تری دربارۀ «سولنال» (عید سال نو کره) آمده که در بخش پاسخ کتاب کار همین ماژول آمده است."]
+  },
+  workbook:[
+    {t:"تمرین ۱ — انتخاب گزینۀ صحیح (حال ساده)",src:"کتاب کار، ص ۳۷",body:[],ans:["1. She teaches French.","2. Emily doesn't set the dinner table every night.","3. I read Molavi's poems in my free time.","4. Does Tim go to the cinema on Fridays?","5. He doesn't know the correct answer.","6. Do they clear the table after dinner?"],ansKind:"پاسخ"},
+    {t:"تمرین ۲ — پر کردن جاهای خالی (حال ساده)",src:"کتاب کار، ص ۳۸",body:[],ans:["1. Leila watches some films of Roshd Festival with her mother each year.","2. Tom doesn't wear special clothes on festivals.","3. Do Johnny and Danny swim in the river in the summer?","4. Does the ceremony start at 8 in the morning?","5. We don't visit our relatives during the week.","6. Bahram and his family go out on Nature Day."],ansKind:"پاسخ"},
+    {t:"تمرین ۳ — پر کردن جاهای خالی با صفت‌های ملکی",src:"کتاب کار، ص ۳۸",body:[],ans:["1. Parsa likes his grandmother a lot.","2. We have an important ceremony. Its name is Fitr.","3. They're making dinner. Their mother isn't home.","4. She always bakes a birthday cake for her brother.","5. I wear my new clothes on New Year's Day.","6. She loves her colorful dress."],ansKind:"پاسخ"},
+    {t:"تمرین ۴ — وصل کردن عبارت‌ها به تصاویر",src:"کتاب کار، ص ۳۹",img:true,body:["عبارت‌های این تمرین (وابسته به تصاویر): go out on Nature Day / visit relatives / wash carpets / clean the house / cook lunch / color eggs / set the table / buy new clothes"],ans:[],ansKind:"",note:"این تمرین به تصاویر کتاب کار وابسته است؛ عبارت‌ها خودِ محتوای اصلی تمرین‌اند و برای تمرین ۶ لازم می‌شوند."},
+    {t:"تمرین ۵ — کامل کردن جمله‌ها با شکل درست فعل",src:"کتاب کار، ص ۴۲",body:[],ans:["1. He doesn't drive his car.","2. He doesn't play with his father's car.","3. She waters the flowers.","4. He doesn't clean the garden.","5. She has a gray bag."],ansKind:"پاسخ"},
+    {t:"تمرین ۶ — متن نوروز پیام (کامل کردن با عبارت‌های درس)",src:"کتاب کار، ص ۴۳",body:[],ans:["We go shopping and buy new clothes. We clean our house and wash our carpets. My cousins and I color the eggs. My sister sets the Haft Seen table. On New Year's Day my mother cooks rice with fish. We always visit my grandparents and our relatives. And on Nature Day we go out and play."],ansKind:"پاسخ"},
+    {t:"تمرین ۷ — یافتن ۵ کلمه + وصل به فعل‌ها + جمله‌سازی",src:"کتاب کار، ص ۴۴",body:["الف) در این تمرین (برخلاف درس‌های دیگر) جدول حروف وجود ندارد و از شما خواسته می‌شود پنج واژۀ درس را بنویسید؛ نمونه: fireworks, ceremony, national anthem, poems of Hafez, Nature Day"],ans:["ب) وصل کلمه به فعل (پاسخ قطعی): watch → fireworks / hold → a ceremony / bake → a cake / clear → the table / make → lunch (dinner)","پ) جمله‌های نمونه: We watch fireworks on holidays. / They hold a ceremony at school. / My mother bakes a cake. / I clear the table after dinner. / She makes lunch every day."],ansKind:"پاسخ"},
+    {t:"تمرین ۸ — ویرایش وب‌لاگ بهارۀ (۶ غلط) + بازنویسی",src:"کتاب کار، ص ۴۵–۴۶",body:[],ans:["people celebrates → celebrate | we cleans → clean our houses | My father give → gives some money | My sister and I always sets → set the Haft Seen Table | we sit around the table and recites → recite the Holy Quran | My mother cook → cooks a special food","الگوی همۀ غلط‌ها یکی است: فعل سوم شخص مفرد بدون s یا فعل غیر سوم شخص با s."],ansKind:"پاسخ"},
+    {t:"تمرین ۹ — بله یا خیر؟",src:"کتاب کار، ص ۴۸",body:[],ans:["جمله‌ها دربارۀ زندگی خودِ شماست (پاسخ نظری): 1. بله (در شب یلدا میوه می‌خوریم.) — 2. بله/نظری — 3. نظری — 4. نظری — 5. بله (در تعطیلات به دیدن بستگان می‌رویم.)"],ansKind:"پاسخ نمونه"},
+    {t:"تمرین ۱۰ — متن «سولنال» کره: حال ساده + بله/خیر + پرسش‌ها",src:"کتاب کار، ص ۴۹–۵۰",body:[],ans:["الف) فعل‌های حال سادۀ متن: is (×۳) / travel / means / eat / play / don't sleep / are / think / sleep / changes / know / like / stay","ب) بله یا خیر: 1. بله (Koreans visit their families on Solnal.) — 2. بله (بزرگ‌ترهای خانواده مهم‌اند؛ «Sebae» یعنی احترام به آن‌ها.) — 3. بله (برنج‌کیک و نودل می‌خورند؛ پس غذاهای متفاوتی می‌خورند.) — 4. خیر (متن می‌گوید تا نیمه‌شب بیدار می‌مانند؛ پس «همۀ شب» دقیق نیست.) — 5. خیر (بچه‌ها می‌دانند این باور درست نیست: Most children know this is not true.)","پ) پرسش‌ها: 1. It is the Korean New Year (one of Korea's holidays). 2. No, they don't (they eat rice cakes and noodles). 3. No, it doesn't (Solnal = Korean New Year; \"Sebae\" means showing respect). 4. No, they play old games.","ت) نوشتن چند جمله دربارۀ فعالیت‌های شما در یکی از مناسبت‌های اسلامی-ایرانی (نمونه): On Norooz, we set the Haft Seen table. We visit our relatives. My mother cooks special food. We wear new clothes."],ansKind:"پاسخ"}
+  ],
+  exam:[
+    "پس از do/does/don't/doesn't فعل بدون s می‌آید: Does she cook lunch? — پرتکرارترین نکتۀ تستی این درس.",
+    "فعل سوم شخص مفرد در جملۀ مثبت s می‌گیرد: watch → watches, study → studies, go → goes (غلط رایج: people celebrates در ویرایش).",
+    "صفت ملکی با اسم می‌آید و شکلش را با «مالک» تعیین می‌کنید نه با چیزی که ملک است: They're making dinner. Their mother isn't home.",
+    "تمایز its (ملکی) و it's (= it is) را در تست‌ها مراقب باشید.",
+    "عبارت‌های فعلی درس (set the table / clear the table / hold a ceremony / bake a cake...) را با فعل درستشان حفظ کنید؛ وصل کردن فعل به اسم در آزمون می‌آید.",
+    "عبارت‌های تبریک: Happy New Year! / Wish you a great holiday!"
+  ],
+  questions:[
+    {q:"My sister ...... the Haft Seen table every year.",mcq:["set","sets","setting","don't set"],ans:1,ex:"سوم شخص مفرد (my sister) در مثبت، s می‌گیرد."},
+    {q:"Tim ...... to the cinema on Fridays.",mcq:["Do / goes","Does / goes","Does / go","Do / go"],ans:2,ex:"بعد از Does فعل بدون s می‌آید."},
+    {q:"صفت ملکی درست: The children color ...... eggs for the Haft Seen table.",mcq:["they","their","them","theirs"],ans:1,ex:"صفت ملکی برای they می‌شود their و قبل از اسم می‌آید."},
+    {q:"منفی کنید: Zahra washes the dishes.",wa:["Zahra doesn't wash the dishes. — با doesn't فعل s نمی‌گیرد."],ex:"بعد از doesn't فعل به شکل ساده برمی‌گردد."},
+    {q:"غلط را پیدا و اصلاح کنید: Does your father works in a bank?",wa:["Does your father work in a bank?"],ex:"بعد از does فعل ساده می‌آید."},
+    {q:"پاسخ کوتاه بدهید: Do you buy new clothes for the New Year? — Yes, ......",wa:["Yes, I do."],ex:"پاسخ کوتاه پرسش با Do، «Yes, I do» است."}
+  ]
+},
+{
+  id:4, icon:"🛠️", title:"خدمات", en:"Services",
+  pages:"کتاب دانش‌آموز: صفحات ۶۳ تا ۷۵ | کتاب کار: صفحات ۵۳ تا ۶۶",
+  intro:"مضمون این درس «خدمات» (Services) است و با کنش ارتباطی «صحبت دربارۀ خدمات»، به مکان‌ها و کارهای خدماتی شهر — دفتر پست، بانک، آتش‌نشانی، اتوبوس و... — می‌پردازد. طبق نقشۀ کتاب، گرامر این درس پرسش‌های Wh (What / Where / When / Who / Why / How با do/does) و قیدهای تکرار (always, usually, often, sometimes, never) است. در Language Melody، لحن «افتانی» پرسش‌های Wh تمرین می‌شود. این درس پرتکرارترین گرامر آزمون‌های نهم (Wh سؤال‌سازی) را در دل دارد.",
+  vocab:[
+    ["call the emergency (115)","تماس با اورژانس (۱۱۵)","عبارت"],["get on a bus","سوار اتوبوس شدن","عبارت"],
+    ["get off a bus","پیاده شدن از اتوبوس","عبارت"],["send an e-mail","رایانامه (ایمیل) فرستادن","عبارت"],
+    ["take out money (ATM)","برداشت پول از عابربانک (ATM)","عبارت"],["hire a taxi","تاکسی گرفتن","عبارت"],
+    ["open an account","حساب (بانکی) باز کردن","عبارت"],["ask the information desk","از میز اطلاعات پرسیدن","عبارت"],
+    ["recharge the E-ticket","شارژ کردن بلیط الکترونیکی","عبارت"],["put out fire","آتش را خاموش کردن","عبارت"],
+    ["donate blood","خون اهدا کردن (تصویرنامه)","عبارت"],["do voluntary work","کار داوطلبانه انجام دادن (تصویرنامه)","عبارت"],
+    ["help charity","کمک کردن به خیریه (تصویرنامه)","عبارت"],["bring to the ER","بردن به اورژانس (تصویرنامه)","عبارت"],
+    ["keep the city clean","شهر را تمیز نگه داشتن (تصویرنامه)","عبارت"],["post office","دفتر پست","اسم"],
+    ["envelope","پاکت نامه","اسم"],["stamp","تمبر","اسم"],
+    ["postcard","کارت پستی","اسم"],["firefighter","آتش‌نشان","اسم"],
+    ["fire station","آتش‌نشانی","اسم"],["employee","کارمند","اسم"],
+    ["ER (Emergency Room)","بخش اورژانس بیمارستان","اسم"]
+  ],
+  grammar:[
+    {title:"۱) پرسش‌های Wh با do / does",
+     body:["کلمۀ پرسشی + do/does + فاعل + فعل ساده. جدول کتاب:"],
+     table:{head:["پرسش کتاب","پاسخ کتاب"],rows:[
+       ["What's her job?","She's an employee."],
+       ["Where do you live?","We live in Marivan."],
+       ["What does your father do?","He teaches English."],
+       ["When does she wake up?","She wakes up at 6:00."],
+       ["Who helps children?","The teacher helps children."],
+       ["What time does it open?","It opens at 8 in the morning."]]},
+     notes:[["کاربرد کلمات پرسشی","What= چه/چه کاری، Where= کجا، When/What time= چه وقت/ساعت چند، Who= چه کسی، Why= چرا (پاسخ با because)، How= چگونه (با چه وسیله‌ای)."]]},
+    {title:"۲) قیدهای تکرار (Adverbs of Frequency)",
+     body:["میزان تکرار کار را نشان می‌دهند و قبل از فعل اصلی می‌آیند (اما بعد از to be). جدول کتاب:"],
+     table:{head:["قید","درصد","مثال کتاب"],rows:[
+       ["always","۱۰۰٪","I always wake up at 5:30."],
+       ["usually","حدود ۸۰–۹۰٪","She always studies hard. / He often plays outside."],
+       ["often","حدود ۶۰–۷۰٪","We are sometimes busy."],
+       ["sometimes","حدود ۴۰–۵۰٪","They never come late."],
+       ["never","۰٪","—"]]},
+     notes:[["مثال‌های بیشتر کتاب","I always wake up at 5:30. / He often plays outside. / We are sometimes busy. / They never come late. — دقت کنید با فعل to be، قید بعد از آن می‌آید."]]},
+    {title:"۳) لحن پرسش‌های Wh (Language Melody)",
+     body:["پرسش‌های Wh با لحن افتانی خوانده می‌شوند. جمله‌های تمرینی کتاب:"],
+     list:["What's your name?","How old are you?","Where do you live?","Why are you here?","When does it open?","Who is that man?"]}
+  ],
+  conv:{
+    title:"مکالمۀ درس (Conversation) — گفت‌وگوی پدرام با یک گردشگر دربارۀ دفتر پست",
+    src:"کتاب دانش‌آموز",
+    lines:[
+      ["Tourist","Excuse me sir! Can you help me please?","ببخشید آقا! می‌شود لطفاً کمکم کنید؟"],
+      ["Pedram","What can I do for you?","چه کاری از دستم برمی‌آید؟"],
+      ["Tourist","I want a postcard, an envelope and a stamp.","من یک کارت پستی، یک پاکت و یک تمبر می‌خواهم."],
+      ["Pedram","Umm..., you can get them from a post office.","اوم...، می‌توانید آن‌ها را از دفتر پست بگیرید."],
+      ["Tourist","Where is the post office?","دفتر پست کجاست؟"],
+      ["Pedram","Actually it's near here. It's just round the corner.","راستش این‌جا نزدیک است؛ همین یک گوشۀ دیگر است."],
+      ["Tourist","Good! Thank you. What time does it open?","خوب است! ممنون. ساعت چند باز می‌شود؟"],
+      ["Pedram","It opens at 8.","ساعت ۸ باز می‌شود."],
+      ["Tourist","Thanks a lot!","خیلی ممنون!"]
+    ],
+    phrases:[["What's her job? — She's an employee.","شغل او چیست؟ — او کارمند است."],
+             ["What time does it open? — It opens at 8 in the morning.","ساعت چند باز می‌شود؟ — ساعت ۸ صبح باز می‌شود."],
+             ["I'd like to know your home address.","می‌خواهم نشانی خانه‌ات را بدانم."]],
+    note:""
+  },
+  reading:{
+    title:"متن خواندنی کتاب (Find it): پارسا و حمید دربارۀ شغل آتش‌نشان",
+    src:"کتاب دانش‌آموز",
+    en:"Parsa: What's your favorite job? — Hamid: I like to be a firefighter. — Parsa: What does a firefighter do? — Hamid: He puts out fire and saves people's lives. — Parsa: And is it an easy job?! — Hamid: No! Actually it's very hard. — Parsa: When does a firefighter go to work? — Hamid: I think he goes to work on shifts. — Parsa: Oh! Where does he work? — Hamid: At a fire station. — Parsa: Is there a fire station near here? — Hamid: Yes, there's one over there.",
+    fa:"پارسا: شغل محبوب تو چیست؟ — حمید: دوست دارم آتش‌نشان شوم. — پارسا: آتش‌نشان چه کار می‌کند؟ — حمید: او آتش را خاموش می‌کند و جان مردم را نجات می‌دهد. — پارسا: کار آسانی است؟! — حمید: نه! واقعاً خیلی سخت است. — پارسا: آتش‌نشان چه وقت به سر کار می‌رود؟ — حمید: فکر کنم نوبتی کار می‌کند. — پارسا: اوه! کجا کار می‌کند؟ — حمید: در آتش‌نشانی. — پارسا: آتش‌نشانی نزدیک این‌جا هست؟ — حمید: بله، یکی همان‌جاست.",
+    notes:["تمرین Find it: این گفت‌وگو تمرین پرسش‌های Wh کتاب است: پرسش‌های What's / What does / When does / Where does / Is there را در آن پیدا و زیر خط بکشید.",
+           "تمرین Tell Your Classmates: پنج جمله دربارۀ خدمات بگویید؛ نمونۀ کتاب: I recharge my E-ticket every week.",
+           "تمرین‌های شنیداری A (شغل و محل کار و ساعت شروع) و B (امیر) به فایل صوتی وابسته‌اند؛ متن صدا در کتاب چاپ نشده است."]
+  },
+  workbook:[
+    {t:"تمرین ۱ — انتخاب کلمۀ پرسشی درست",src:"کتاب کار، ص ۵۵",body:[],ans:["1. Where do the children play football? (They play outside.)","2. Why does she take the bus? (Because it's fast.)","3. When do the banks open? (At 8 o'clock.)","4. Who works in the ER? (Doctors work there.)","5. What is on the table? (The radio.)","6. How do you go to work every morning? (I go to work by car.)"],ansKind:"پاسخ"},
+    {t:"تمرین ۲ — ساختن پرسش با do یا does",src:"کتاب کار، ص ۵۶",body:[],ans:["1. What do you do in your free time?","2. When does your brother get up in the morning?","3. Where does a baker work?","4. How does she go to school?","5. Why do they learn English?"],ansKind:"پاسخ"},
+    {t:"تمرین ۳ — وصل کردن پرسش‌ها به پاسخ‌ها",src:"کتاب کار، ص ۵۷",body:[],ans:["1. Where do they stay on their holiday? → (b) I think in a hotel.","2. When does the festival start? → (d) It starts in March.","3. Why does Mike come late to school? → (a) Because his house is far.","4. What does a firefighter do? → (c) He puts out fire."],ansKind:"پاسخ"},
+    {t:"تمرین ۴ — بازنویسی جملات با قید داخل کمانک",src:"کتاب کار، ص ۵۸",body:["الگوی نمونۀ کتاب: They (often) go to the movies. → They often go to the movies. — قید تکرار قبل از فعل اصلی می‌آید."],ans:["1. He sometimes reads the newspaper.","2. She often helps her daughter with her homework.","3. We usually watch television in the evening.","4. I always eat vegetables and fruits.","5. They never hire a taxi to work."],ansKind:"پاسخ"},
+    {t:"تمرین ۵ — پر کردن جاهای خالی با Wh و پاسخ‌ها",src:"کتاب کار، ص ۵۹",body:[],ans:["کلمات پرسشی: 1. When do you sleep at night? 2. How do they go to school? 3. Where does Mr. Brown live? 4. What does she drink for breakfast? 5. Why is he nervous?","پاسخ بند دوم: 1. I sleep at 9 p.m. 2. They go to school by bus. 3. He lives in Tehran. 4. She drinks milk. 5. Because he has a test."],ansKind:"پاسخ",note:"پاسخ بند دوم تمرین به تصاویر (مثلاً ساعت ۹ شب) وابسته است؛ پاسخ بالا نمونه است."},
+    {t:"تمرین ۶ — وصل کردن تصاویر به پرسش و پاسخ‌ها",src:"کتاب کار، ص ۶۰",body:[],ans:["1. Who plays with his friends? → (c) Mahdi plays with his friends.","2. Where is the driver? → (a) He's at the gas station.","3. What does a firefighter do? → (b) He puts out fire and saves lives.","4. When do you wake up in the morning? → (e) I usually wake up very early.","5. How do the children go to school? → (d) They always go by bus."],ansKind:"پاسخ"},
+    {t:"تمرین ۷ — جست‌وجوی کلمات خدمات + ستون‌بندی + جمله‌سازی",src:"کتاب کار، ص ۶۱–۶۲",body:["الف) شش کلمۀ جدول (تأییدشده): HIRE — ACCOUNT — FIRE — CLEAN — HARD — OFF"],ans:["جمله‌های بند الف: 1. A firefighter puts out fire. 2. Mr. Ahmadi goes to work by taxi. He hires a taxi. 3. Mahya wants to open an account (in the bank). 4. get on a bus ≠ get off a bus. 5. Pilots have a hard job (≠ easy). 6. We try to keep the city clean (≠ dirty).","ب) ستون‌بندی: Noun (اسم): account, fire — Verb (فعل): hire — Adjective (صفت): hard, clean (off جزء فعل عبارتی get off است)."],ansKind:"پاسخ"},
+    {t:"تمرین ۸ — ویرایش پرسش‌نامۀ امیرعلی (۵ غلط)",src:"کتاب کار، ص ۶۳",body:[],ans:["Does your father use an E-ticket? → Does your father use an E-ticket? | Are there a hospital near your house? → Is there a hospital near your house? | Does you give money to charity? → Do you give money to charity? | How does you keep your city clean? → How do you keep your city clean? | Does your classmates do volunteer work? → Do your classmates do volunteer work?"],ansKind:"پاسخ"},
+    {t:"تمرین ۹ — بله یا خیر؟",src:"کتاب کار، ص ۶۴",body:[],ans:["پاسخ‌ها نظری و بسته به زندگی خودِ شماست؛ نمونۀ منطقی: 1. بله — 2. خیر — 3. بله — 4. نظری — 5. نظری — 6. نظری"],ansKind:"پاسخ نمونه"},
+    {t:"تمرین ۱۰ — متن اردوی مدرسه: قیدهای تکرار + بله/خیر + پرسش‌ها",src:"کتاب کار، ص ۶۵–۶۶",body:[],ans:["الف) قیدهای تکرار متن: sometimes (We sometimes go out) / often (We often visit a museum) / sometimes (We sometimes meet a famous writer) / usually (The writer usually tells us some interesting stories)","ب) بله یا خیر: 1. خیر (همیشه نمی‌روند؛ گاهی/اغلب.) — 2. بله — 3. بله (زود می‌خوابند: go to bed early.) — 4. بله (We have a lot of fun.) — 5. بله (نویسنده برایشان قصه می‌گوید.)","پ) پاسخ دربارۀ اردوی مدرسۀ خودتان (نمونه): 1. We usually go to museums. 2. We go there by bus. 3. We play games and pray. 4. We come back at 6 p.m. 5. Yes, I do."],ansKind:"پاسخ"}
+  ],
+  exam:[
+    "ساختار پرسش Wh در حال ساده: کلمۀ پرسشی + do/does + فاعل + فعل ساده؛ بعد از does فعل s نمی‌گیرد (غلط رایج تمرین ویرایش کتاب کار: Does your father works ...?).",
+    "هم‌خوانی do/does با فاعل: سوم شخص مفرد → does؛ بقیه → do. تمرین ۸ کتاب کار کاملاً روی همین نکته است.",
+    "قید تکرار قبل از فعل اصلی و بعد از to be می‌آید: He often plays outside. / We are sometimes busy.",
+    "Why با پاسخ Because ... جفت می‌شود؛ How معمولاً با by bus / by car پاسخ داده می‌شود.",
+    "مقایسۀ get on ≠ get off و معنی‌های واژگان خدمات (hire, open an account, put out fire...) را حفظ باشید.",
+    "پرسش What does he do? دربارۀ «شغل» است، نه کاری که همین الان انجام می‌دهد."
+  ],
+  questions:[
+    {q:"...... does the post office open? — At 8.",mcq:["What","What time","Where","Who"],ans:1,ex:"پرسش دربارۀ ساعت است — گزینۀ What time."},
+    {q:"...... does she take the bus? — Because it's fast.",mcq:["How","When","Why","Where"],ans:2,ex:"پاسخ با Because شروع شده؛ پس پرسش Why است."},
+    {q:"Ali goes to school by bus. (پرسش بسازید: How ...?)",wa:["How does Ali go to school?"],ex:"کلمۀ پرسشی + does + فاعل + فعل ساده."},
+    {q:"جای خالی با قید تکرار (معنی: همیشه): I ...... wake up at 6.",wa:["always — قبل از فعل اصلی می‌آید."],ex:"قید تکرار قبل از فعل اصلی قرار می‌گیرد."},
+    {q:"غلط را اصلاح کنید: Where does Ali lives?",wa:["Where does Ali live? — بعد از does فعل ساده می‌آید."],ex:"بعد از does فعل بدون s می‌آید."},
+    {q:"منفی کنید: They always hire a taxi.",wa:["They never hire a taxi. — منفیِ always در این ساختار با never هم می‌شود؛ شکل استاندارد: They don't (always) hire a taxi."],ex:"never معادل منفیِ always است."}
+  ]
+},
+
+{
+  id:5, icon:"📺", title:"رسانه", en:"Media",
+  pages:"کتاب دانش‌آموز: صفحات ۸۱ تا ۹۳ | کتاب کار: صفحات ۶۷ تا ۸۲",
+  intro:"مضمون این درس «رسانه» (Media) است و با کنش ارتباطی «صحبت دربارۀ رسانه»، به اینترنت، رایانه، موبایل، تلویزیون و رویدادهای رسانه‌ای مثل جشنوارۀ فیلم فجر می‌پردازد. طبق نقشۀ کتاب، گرامر این درس زمان گذشتۀ افعال باقاعده (Past Tense — Regular) و گذشتۀ فعل to be (was / were) است. در Language Melody، لحن «خیزانیِ تعجب» در جمله‌هایی مثل How fantastic! / That's great! تمرین می‌شود. این درس مبنای اصلی سؤال‌های گذشتۀ ساده در امتحان نهایی است.",
+  vocab:[
+    ["interview somebody","با کسی مصاحبه کردن","عبارت"],["update a blog","وب‌لاگ را به‌روزرسانی کردن","عبارت"],
+    ["text a message","پیام متنی (اس‌ام‌اس) فرستادن","عبارت"],["receive an e-mail","ایمیل دریافت کردن","عبارت"],
+    ["participate in an online course","در یک دورۀ آنلاین شرکت کردن","عبارت"],["connect to the Internet","به اینترنت وصل شدن","عبارت"],
+    ["download something from the Internet","چیزی را از اینترنت دانلود کردن","عبارت"],["install a computer dictionary","دیکشنری رایانه‌ای نصب کردن","عبارت"],
+    ["use Information Technology (IT)","استفاده از فناوری اطلاعات (IT)","عبارت"],["attend a TV program","در برنامۀ تلویزیونی حاضر شدن/شرکت کردن","عبارت"],
+    ["look at the newsstand","نگاه کردن به دکۀ روزنامه (تصویرنامه)","عبارت"],["watch a quiz show","مسابقۀ تلویزیونی تماشا کردن (تصویرنامه)","عبارت"],
+    ["see a war movie","فیلم جنگی دیدن (تصویرنامه)","عبارت"],["change the TV channels","کانال‌های تلویزیون را عوض کردن (تصویرنامه)","عبارت"],
+    ["install an antivirus program","برنامۀ آنتی‌ویروس نصب کردن (تصویرنامه)","عبارت"],["film festival","جشنوارۀ فیلم","اسم"],
+    ["website","وب‌سایت","اسم"],["report","گزارش","اسم"]
+  ],
+  grammar:[
+    {title:"۱) گذشتۀ سادۀ افعال باقاعده",
+     body:["برای کاری که در گذشته تمام شده است. در جملۀ مثبت به پایان فعل ed- اضافه می‌شود؛ در منفی و پرسشی از did / didn't استفاده می‌کنیم و فعل به شکل ساده برمی‌گردد. مثال‌های کتاب:"],
+     table:{head:["مثبت","منفی","پرسش"],rows:[
+       ["I watched TV yesterday.","I didn't download the book.","Did you search the Internet?"],
+       ["He received an e-mail.","She didn't work with her mobile.","Did the girls listen to the radio?"],
+       ["They closed the door yesterday.","We didn't enjoy it.","Did Mina surf the Internet?"]]},
+     notes:[["قیدهای زمان گذشته","yesterday / last night / last week / two days ago"]]},
+    {title:"۲) گذشتۀ فعل to be (was / were)",
+     body:["تبدیل حال به گذشته در جمله‌های کتاب:"],
+     table:{head:["حال","گذشته"],rows:[
+       ["I am happy.","I was happy yesterday."],
+       ["He is happy.","He was happy last week."],
+       ["They are happy.","They were happy last winter."],
+       ["I am not happy.","I was not (wasn't) happy."]]},
+     notes:[["ساختار وجودی","There was a newspaper in the library. / There were many messages in my mailbox."],
+            ["پرسش","Was it sunny yesterday? / Were they upset last week?"]]},
+    {title:"۳) لحن تعجب (Language Melody)",
+     body:["جمله‌های تعجبی با لحن خیزانی خوانده می‌شوند. جمله‌های تمرینی کتاب:"],
+     list:["How fantastic!","That's great!","That's really nice!","It's brilliant!","Well done!","It's amazing!","What a wonderful day!","What a beautiful flower!"]}
+  ],
+  conv:{
+    title:"مکالمۀ درس (Conversation) — گفت‌وگوی تلفنی مینا و مهسا دربارۀ جشنوارۀ فیلم فجر",
+    src:"کتاب دانش‌آموز",
+    lines:[
+      ["Mina","Did you enjoy your weekend?","آخر هفته‌ات خوش گذشت؟"],
+      ["Mahsa","Yes, it was wonderful! I attended Fajr International Film Festival.","بله، فوق‌العاده بود! در جشنوارۀ بین‌المللی فیلم فجر شرکت کردم."],
+      ["Mina","Really? I am also interested in its events and movies.","واقعاً؟ من هم به رویدادها و فیلم‌هایش علاقه‌مندم."],
+      ["Mahsa","Oh, did you watch the reports on TV last night?","اوه، گزارش‌هایش را دیشب در تلویزیون دیدی؟"],
+      ["Mina","Yes, I did, but I like to read about them.","بله، دیدم، اما دوست دارم درباره‌شان بخوانم."],
+      ["Mahsa","Well, you can surf its website if you like. There are many interesting things there.","خب، اگر دوست داری می‌توانی وب‌سایتش را ببینی؛ چیزهای جالب زیادی آن‌جاست."],
+      ["Mina","That's great! Could you please give me the website address?","عالی است! می‌شود لطفاً نشانی وب‌سایت را به من بدهی؟"],
+      ["Mahsa","Why not! Just a moment. Umm... I just texted it.","چرا که نه! یک لحظه... اوم... همین الان برات فرستادم (پیامک کردم)."],
+      ["Mina","Thanks a lot.","خیلی ممنون."]
+    ],
+    phrases:[["Did the girls listen to the radio? — Yes, they did.","آیا دخترها به رادیو گوش دادند؟ — بله."],
+             ["Who watched the movie last night? — My sister.","دیشب چه کسی فیلم را تماشا کرد؟ — خواهرم."],
+             ["Could you please give it to me?","می‌شود لطفاً آن را به من بدهید؟"]],
+    note:""
+  },
+  reading:{
+    title:"متن خواندنی کتاب (Find it): تعطیلات بدون تلویزیون",
+    src:"کتاب دانش‌آموز",
+    en:"Last weekend, something happened to our TV. It didn't work. At first, we were upset. But then we talked about our day. It was really fun! Later, we helped our mother and cleaned the house. In the afternoon, my grandfather showed us how to play an old game. We enjoyed it a lot. All day we were busy doing different things. At night, we all were happy. No one talked about TV!",
+    fa:"آخر هفتۀ گذشته برای تلویزیون ما اتفاقی افتاد. کار نمی‌کرد. اولش ناراحت شدیم. اما بعد دربارۀ روزمان با هم صحبت کردیم. واقعاً باحال بود! بعد از آن به مادرمان کمک کردیم و خانه را تمیز کردیم. بعدازظهر، پدربزرگم به ما نشان داد چطور یک بازی قدیمی را بازی کنیم. خیلی لذت بردیم. تمام روز سرمان شلوغ بود و کارهای مختلفی انجام می‌دادیم. شب، همه‌مان خوشحال بودیم. هیچ‌کس دربارۀ تلویزیون حرف نزد!",
+    notes:["تمرین Find it: فعل‌های گذشتۀ ساده را در متن پیدا کنید (happened, didn't work, were, talked, was, helped, cleaned, showed, enjoyed).",
+           "تمرین Tell Your Classmates: پنج کاری که دیروز کردید بگویید؛ نمونه: I watched TV yesterday.",
+           "تمرین‌های شنیداری A (بهنام و تابستانش) و B (فیلم‌های سینما) به فایل صوتی وابسته‌اند؛ متن صدا در کتاب چاپ نشده است."]
+  },
+  workbook:[
+    {t:"تمرین ۱ — پر کردن جاهای خالی با زمان گذشته",src:"کتاب کار، ص ۶۹",body:[],ans:["This Mehr, my mother and I attended International Children Film Festival in Isfahan. We watched many interesting movies there. One movie was about an Indian family. They lived near the sea. It showed many things about their life. I liked it very much. I also learned many things about India."],ansKind:"پاسخ"},
+    {t:"تمرین ۲ — بازنویسی جملات در زمان گذشته",src:"کتاب کار، ص ۷۰",body:[],ans:["1. We visited a museum last summer.","2. The teacher was very happy yesterday.","3. Amir walked to the park.","4. My mother baked a cake last Friday.","5. There was an apple on the table.","6. I liked cartoons."],ansKind:"پاسخ"},
+    {t:"تمرین ۳ — کامل کردن جدول پرسش و پاسخ کوتاه",src:"کتاب کار، ص ۷۱",body:[],ans:["1. Did you watch an old movie? — No, I didn't. / I didn't watch a cartoon.","2. Did he like computer games? — Yes, he did. / He liked computer games.","3. Did the student use a mobile in the class? — No, she didn't. / She didn't use a computer.","4. Was it sunny yesterday? — Yes, it was. / It was sunny.","5. Were they upset last week? — No, they weren't. / They weren't upset."],ansKind:"پاسخ"},
+    {t:"تمرین ۴ — مرتب کردن جملات",src:"کتاب کار، ص ۷۲",body:[],ans:["1. Did Mina call her grandparents on Friday?","2. The boys didn't like the movie.","3. Where did you watch the movie?","4. Were the girls happy yesterday?","5. Did she edit her brother's text?"],ansKind:"پاسخ"},
+    {t:"تمرین ۵ — پاسخ به پرسش‌ها",src:"کتاب کار، ص ۷۳",body:[],ans:["1. Yes, it was. / No, it wasn't. — 2. Yes, she did. — 3. No, they weren't. — 4. Yes, they did. — 5. No, they didn't (they watched it at home)."],ansKind:"نمونه پاسخ",note:"این پاسخ‌ها به موقعیت شما بستگی دارند؛ شکل گرامریِ درست مهم است (گذشتۀ was/were و did/didn't)."},
+    {t:"تمرین ۶ — مرتب کردن جمله‌ها برای ساختن مکالمه",src:"کتاب کار، ص ۷۴",body:[],ans:["1. Where were you this morning?","2. I was at home. I participated in a test.","3. Did you have a test at home?","4. Yes, it was an online test.","5. How did you answer the questions?","6. I used my computer."],ansKind:"پاسخ"},
+    {t:"تمرین ۷ — جست‌وجوی کلمات رسانه + ستون‌بندی + کامل کردن جمله‌ها",src:"کتاب کار، ص ۷۴–۷۶",body:["الف) شش کلمۀ جدول (تأییدشده): MOBILE — COMPUTER — RADIO — EMAIL — BOOK — TV"],ans:["ب) ستون‌بندی: read: book, email — listen: radio — watch: TV — speak: mobile — کلمۀ computer با فعل use به کار می‌رود (use the computer)","پ) کامل کردن جمله‌ها: 1. I received an e-mail this morning. 2. My computer didn't work last night. I didn't connect to the Internet. 3. There was an interesting war movie on TV. 4. Sima listened to the news on the radio. 5. It was a funny book."],ansKind:"پاسخ"},
+    {t:"تمرین ۸ — ویرایش رایانامۀ سینا (۶ غلط) + بازنویسی",src:"کتاب کار، ص ۷۷–۷۹",body:[],ans:["It were → was a nice and quiet place. | There was → were tall trees and beautiful flowers. | The sky were → was blue and clean. | The water of the river were → was clean and cool. | We not use → didn't use our computers or mobiles a lot. | We play → played a lot all day.","متن اصلاح‌شده: Dear Sam, I am writing this e-mail with my tablet. I just learned how to use it. Last week our neighbor invited us to a village near a river. It was a nice and quiet place. There were tall trees and beautiful flowers. The sky was blue and clean. The water of the river was clean and cool. We didn't use our computers or mobiles a lot. But we were very happy. We played a lot all day. There are some photos of our trip here. Please write to me soon. Best, Sina"],ansKind:"پاسخ"},
+    {t:"تمرین ۹ — انتخاب گزینۀ صحیح",src:"کتاب کار، ص ۷۹",body:[],ans:["1. In 1329, there wasn't a mobile. (در گذشته موبایل وجود نداشت.)","2. You were absent last Saturday.","3. Your family attended your school celebration this year.","4. In 1350, there weren't 30 TV channels (در ۱۳۵۰ سی کانال تلویزیونی وجود نداشت)."],ansKind:"پاسخ",note:"در بندهای ۲ و ۳ هر دو شکل از نظر گرامری درست‌اند و انتخاب به معنای موردنظر/تصویر بستگی دارد؛ پاسخ بالا شکل مثبت رایج است."},
+    {t:"تمرین ۱۰ — گزارش مینا: زیر خط کشیدن گذشته + بله/خیر + پرسش‌ها",src:"کتاب کار، ص ۸۰–۸۱",body:[],ans:["الف) فعل‌های گذشتۀ گزارش: attended (×چند) / was / enjoyed / watched / called / visited — (دقت: I like to watch it again / She needs to rest / I miss her حال ساده‌اند.)","ب) بله یا خیر: 1. خیر (برای دانش‌آموزان پایۀ ۳ بود، نه ۵.) — 2. بله — 3. خیر (فیلم دربارۀ تاریخ ایران بود.) — 4. بله","پ) پرسش‌ها: 1. No, she attended it on Saturday (Esfand 2). 2. Yes, she did (she liked to watch it again). 3. Mahsa (was absent on Wednesday). 4. No, they watched it at school."],ansKind:"پاسخ"}
+  ],
+  exam:[
+    "در منفی و پرسشِ گذشته، فعل به شکل ساده برمی‌گردد: Did you watched? ✗ → Did you watch? ✓ / didn't watched ✗ → didn't watch ✓",
+    "بعد از There was اسم مفرد و بعد از There were اسم جمع می‌آید (تمرین ویرایش: There was tall trees ✗ → There were tall trees ✓).",
+    "هم‌خوانی was/were با فاعل: I/he/she/it → was و we/you/they → were.",
+    "پاسخ کوتاه گذشته: Yes, I did. / No, she didn't. / Yes, it was. / No, they weren't.",
+    "جمله‌های تعجبی با لحن خیزانی: How fantastic! / What a wonderful day!",
+    "قیدهای زمان گذشته (yesterday, last night, last week, ...ago) نشانۀ لازم برای گذشتۀ ساده‌اند."
+  ],
+  questions:[
+    {q:"We ...... a museum last summer.",mcq:["visit","visits","visited","are visiting"],ans:2,ex:"قید زمان گذشته (last summer) — گذشتۀ ساده می‌خواهد."},
+    {q:"...... they upset last week?",mcq:["Did","Were","Was","Do"],ans:1,ex:"صفت (upset) فعل to be می‌خواهد و فاعل جمع است: Were."},
+    {q:"منفی کنید: Mina texted a message to her sister.",wa:["Mina didn't text a message to her sister."],ex:"در منفی گذشته، didn't + فعل ساده."},
+    {q:"My sister watched the movie last night. (پرسش Wh بسازید)",wa:["Who watched the movie last night?"],ex:"پرسش از فاعل، بدون کمکی did ساخته می‌شود."},
+    {q:"غلط را اصلاح کنید: Did she received an e-mail?",wa:["Did she receive an e-mail? — بعد از did فعل ساده می‌آید."],ex:"بعد از did فعل به شکل ساده برمی‌گردد."},
+    {q:"پاسخ کوتاه بدهید: Did Mina surf the Internet? — No, ......",wa:["No, she didn't."],ex:"پاسخ کوتاه گذشته با did/didn't ساخته می‌شود."}
+  ]
+},
+{
+  id:6, icon:"🏥", title:"سلامتی و آسیب‌ها", en:"Health and Injuries",
+  pages:"کتاب دانش‌آموز: صفحات ۸۳ تا ۹۵ | کتاب کار: صفحات ۹۵ تا ۱۰۷",
+  intro:"مضمون این درس «سلامتی و آسیب‌ها» (Health and Injuries) است و با کنش ارتباطی «صحبت دربارۀ سلامتی و آسیب‌ها»، زمان گذشته به حوادث، آسیب‌های بدنی، کمک‌های اولیۀ هلال‌احمر و مراقبت از خود می‌پردازد. طبق نقشۀ کتاب، گرامر این درس زمان گذشتۀ افعال بی‌قاعده (Past Tense — Irregular) و ضمیرهای مفعولی (me, you, him, her, it, us, them) است. فهرست کامل افعال بی‌قاعدۀ کتاب در پیوست انتهای همین ماژول آمده است. در Language Melody این درس، لحن خیزانی و افتانی با هم تمرین می‌شود.",
+  vocab:[
+    ["burn","سوختن، بسوزاندن","فعل"],["hurt","آسیب رساندن، درد گرفتن (گذشته: hurt)","فعل"],
+    ["cut","بریدن (گذشته: cut)","فعل"],["break","شکستن (استخوان/پا) (گذشته: broke)","فعل"],
+    ["hit","ضربه زدن، خوردن به چیزی (گذشته: hit)","فعل"],["twist","پیچ دادن؛ پیچ خوردن (مچ) (گذشته: twisted)","فعل"],
+    ["bleed","خون‌ریزی کردن (گذشته: bled)","فعل"],["bruise","کبودی","اسم"],
+    ["plaster","چسب زخم/باند کوچک","اسم"],["wound","زخم","اسم"],
+    ["knee","زانو","اسم"],["ankle","مچ پا","اسم"],
+    ["back","کمر","اسم"],["head","سر","اسم"],
+    ["leg","پا","اسم"],["finger","انگشت","اسم"],
+    ["take care of","مراقبت کردن از (تصویرنامه)","عبارت"],["black eye","کبودی دور چشم (تصویرنامه)","اسم"],
+    ["car crash","تصادف ماشین (تصویرنامه)","اسم"],["scar","جای زخم، اسکار (تصویرنامه)","اسم"],
+    ["heart attack","سکتۀ قلبی (تصویرنامه)","اسم"],["leg in a cast","پا در گچ (تصویرنامه)","عبارت"],
+    ["first aid","کمک‌های اولیه","اسم"],["accident","حادثه، تصادف","اسم"]
+  ],
+  grammar:[
+    {title:"۱) گذشتۀ افعال بی‌قاعده",
+     body:["بسیاری از فعل‌های پرکاربرد، شکل گذشتۀ نامنظم دارند و باید حفظ شوند (فهرست کامل در پیوست ماژول). ساختار جمله مثل باقاعده‌هاست؛ فقط شکل فعل عوض می‌شود. جدول کتاب:"],
+     table:{head:["مثبت","منفی","پرسش"],rows:[
+       ["I spoke English.","I didn't speak English.","Did you speak English?"],
+       ["She broke her leg.","She didn't hurt her back.","Did you break your leg?"],
+       ["They saw him in the park.","He didn't walk after the accident.","Where did you break your leg?"]]},
+     notes:[["نمونه‌های پرتکرار درس","fall → fell / break → broke / hurt → hurt / hit → hit / cut → cut / see → saw / stay → stayed (قاعده‌با)"]]},
+    {title:"۲) ضمیرهای مفعولی (Object Pronouns)",
+     body:["وقتی مفعول جمله ضمیر باشد، از شکل مفعولی استفاده می‌کنیم. جدول کتاب:"],
+     table:{head:["فاعل","مفعول","مثال کتاب"],rows:[
+       ["I","me","He called me."],
+       ["you","you","I am talking to you."],
+       ["he","him","They saw Ali / him in the park."],
+       ["she","her","Mina looked at Zahra / her."],
+       ["it","it","You hurt the cat / it."],
+       ["we","us","They invited us."],
+       ["they","them","She read the books / them."]]}},
+    {title:"۳) لحن خیزانی و افتانی (Language Melody)",
+     body:["کتاب در این درس هر دو لحن را با هم تمرین می‌کند: پرسش‌های بله/خیری خیزانی‌اند، جمله‌های تعجبی و خبری افتانی و پرسش‌های Wh افتانی."],
+     list:["Is he clever?","Do they have their lunch at school?","It is fantastic!","We had an accident.","Where is my coat?","When did they go to school?"]}
+  ],
+  conv:{
+    title:"مکالمۀ درس (Conversation) — گفت‌وگوی رضا و احسان دربارۀ سفر دریاچه و کمک‌های اولیه",
+    src:"کتاب دانش‌آموز",
+    lines:[
+      ["Reza","We plan to go to the lake. Do you want to come?","ما می‌خواهیم به دریاچه برویم. می‌خواهی بیایی؟"],
+      ["Ehsan","I don't think so. I don't like school trips. Last summer I fell and broke my leg.","فکر نکنم. من از اردوهای مدرسه خوشم نمی‌آید. تابستان گذشته زمین خوردم و پایم شکست."],
+      ["Reza","It sometimes happens. I twisted my ankle last winter. I stayed home for two weeks!","گاهی پیش می‌آید! زمستان گذشته مچ پایم پیچ خورد. دو هفته خانه ماندم!"],
+      ["Ehsan","That's too bad! I didn't know that.","چه بد! این را نمی‌دانستم."],
+      ["Reza","Yeah..., but after that, I participated in Helal-e-Ahmar first aid classes. I learned how to take care of myself.","آره...، اما بعدش در کلاس‌های کمک‌های اولیۀ هلال‌احمر شرکت کردم. یاد گرفتم چطور از خودم مراقبت کنم."],
+      ["Ehsan","I like that. Can you give me some advice?","خوب است. می‌توانی چند توصیه به من بکنی؟"],
+      ["Reza","Sure!","البته!"]
+    ],
+    phrases:[["Did Mina have an accident? — Yes, she did.","آیا مینا تصادف کرد؟ — بله."],
+             ["Who had an accident? — Reza.","چه کسی تصادف کرد؟ — رضا."],
+             ["Do you need help?","کمک لازم داری؟"]],
+    note:""
+  },
+  reading:{
+    title:"متن خواندنی کتاب (Find it): برادر کوچک‌تر رضا و شیرینی داغ",
+    src:"کتاب دانش‌آموز",
+    en:"My mom just baked some cookies. She put them on the table. My little brother Reza was hungry. He wanted a cookie. He climbed a chair to take it. He fell down and hurt his head. He climbed the chair again. He took one this time. The cookie was hot. He burnt his hand and started crying.",
+    fa:"مادرم همین تازه چند شیرینی پخته بود. آن‌ها را روی میز گذاشت. برادر کوچک‌ترم رضا گرسنه بود. شیرینی می‌خواست. برای برداشتنش از روی صندلی بالا رفت. زمین خورد و سرش آسیب دید. دوباره از صندلی بالا رفت. این‌بار یکی برداشت. شیرینی داغ بود. دستش سوخت و شروع به گریه کرد.",
+    notes:["تمرین Find it: فعل‌های گذشتۀ ساده را پیدا کنید (baked, put, was, wanted, climbed, fell, hurt, took, burnt, started).",
+           "تمرین Tell Your Classmates: پنج آسیبی که در پنج سال گذشته داشته‌اید بگویید؛ نمونۀ کتاب: I cut my finger last week.",
+           "تمرین‌های شنیداری A (دختری که زمین خورد) و B (امید عباسی و آتش‌سوزی) به فایل صوتی وابسته‌اند؛ متن صدا در کتاب چاپ نشده است. داستان «الینا» در تمرین ۱۰ کتاب کار با همین گرامر آمده و در بخش کتاب کار پاسخ داده شده است."]
+  },
+  workbook:[
+    {t:"تمرین ۱ — انتخاب پاسخ صحیح",src:"کتاب کار، ص ۸۵",body:[],ans:["1. He broke his leg.","2. Yes, I did.","3. She hurt them (eyes جمع است → them).","4. No, she didn't.","5. Ali (Who burnt his hand? → Ali).","6. Yes, she called him (Sina پسر است → him)."],ansKind:"پاسخ"},
+    {t:"تمرین ۲ — کامل کردن مکالمه با did / didn't",src:"کتاب کار، ص ۸۶",body:[],ans:["Man: Did you hit my car? — Reza: No, I didn't. — Man: Who did? — Reza: A little boy. — Man: How did a little boy hit my car? — Reza: He was on a bike. — Man: Did he hurt himself? — Reza: No, he didn't."],ansKind:"پاسخ"},
+    {t:"تمرین ۳ — سؤالی کردن جملات",src:"کتاب کار، ص ۸۷",body:[],ans:["1. Did you play in the yard this morning?","2. Did Ali and Omid participate in an online English course last summer?","3. Did Sima speak English well?","4. Did Behnam send a message to his cousin?","5. Did the children see the movie in the afternoon?"],ansKind:"پاسخ"},
+    {t:"تمرین ۴ — ساختن پنج جملۀ درست از جدول",src:"کتاب کار، ص ۸۸",body:["نمونۀ کتاب: We burned our hands."],ans:["1. They broke their legs.","2. My teacher looked after her mother.","3. Sima hurt her hand.","4. The worker cut his finger.","5. My sister hit her head.","نکتۀ پاسخ: هر ترکیب هم‌خوان از ستون فاعل + ملکی + فعل + مفعول درست است؛ نکته این است که ضمیر ملکی با فاعل بخواند (We → our, They → their, Sima → her ...)."],ansKind:"نمونه"},
+    {t:"تمرین ۵ — کامل کردن گزارش حادثه با جدول مصدومان",src:"کتاب کار، ص ۸۹",body:["مجموع جدول (بر اساس پاسخ کتاب): کودکان ۱+۲+۴+۵=۱۲؛ سالمندان ۱+۲+۳+۴=۱۰؛ دانش‌آموزان ۰+۱+۰+۳=۴"],ans:["Yesterday was very cold. It snowed heavily. Twelve kids, ten old people, and four students were hurt. One kid broke his leg and two kids hurt their hands. Three old people hurt their backs and four old people hurt their heads. Three students also hurt their heads."],ansKind:"پاسخ"},
+    {t:"تمرین ۶ — زندگی پارسا: پاسخ به پرسش‌ها",src:"کتاب کار، ص ۹۰",body:[],ans:["1. He lived in Khorramabad (in 1383).","2. He joined Helal-e Ahmar in 1392.","3. Yes, he did (he broke his hand in 1389).","4. No, he didn't (he went to school in Khorramabad; he moved to Shiraz in 1387).","5. In 1391 he participated in Helal-e Ahmar ceremony."],ansKind:"پاسخ"},
+    {t:"تمرین ۷ — جست‌وجوی کلمات سلامتی + ستون‌بندی + جمله‌ها",src:"کتاب کار، ص ۹۱–۹۲",body:["الف) شش کلمۀ جدول (تأییدشده): HIT — BACK — BLEEDING — BROKE — ANKLE — LEG"],ans:["جمله‌های بند الف: 1. Her finger is bleeding. 2. Reza broke his leg. 3. They twisted their ankles. 4. She hit her head into a door. 5. Her back hurts. 6. Her leg hurts a lot.","ب) ستون‌بندی: Body (بدن): back, ankle, leg — Verbs (فعل‌ها): hit, broke, bleeding"],ansKind:"پاسخ"},
+    {t:"تمرین ۸ — ویرایش متن سحر (۵ غلط) + بازنویسی",src:"کتاب کار، ص ۹۲–۹۳",body:[],ans:["We has → had a long trip last year. | We taking → took a bus to their city. | we sees → saw an injured goat near the road. | The animal hurting → hurt its neck. | it were → was not a bad wound.","متن اصلاح‌شده: We had a long trip to our uncle's house last year. We took a bus to their city. There were many cities on the way. There were some jungles and rivers, too. We enjoyed everything. But, we saw an injured goat near the road. We stopped to help it. The animal hurt its neck. Luckily, it was not a bad wound. We took the goat to the police station."],ansKind:"پاسخ"},
+    {t:"تمرین ۹ — پاسخ به پرسش‌ها دربارۀ خودتان",src:"کتاب کار، ص ۹۴",body:[],ans:["نمونه پاسخ: 1. No, I wasn't. — 2. I ate rice and fish. — 3. I came to school at 7:30. — 4. My grandmother needed help."],ansKind:"نمونه پاسخ"},
+    {t:"تمرین ۱۰ — داستان الینا: زیر خط کشیدن گذشته + بله/خیر",src:"کتاب کار، ص ۹۵",body:[],ans:["الف) فعل‌های گذشتۀ داستان: was (×۳) / had / hit / hurt / did not walk / stayed / studied / wrote / became / read","ب) بله یا خیر: 1. خیر (الینا دختر بود.) — 2. خیر (وقتی ۷ ساله بود پایش آسیب دید، نه دست پدرش.) — 3. بله — 4. بله"],ansKind:"پاسخ"},
+    {t:"تمرین ۱۱ — پاسخ به پرسش‌های داستان الینا",src:"کتاب کار، ص ۹۶",body:[],ans:["1. She had a bad accident (their car hit a big tree and she hurt her legs).","2. No, she didn't (she stayed at home and studied hard).","3. Many children (read her stories).","4. Yes, she was (a famous writer)."],ansKind:"پاسخ"}
+  ],
+  exam:[
+    "فعل بی‌قاعده در منفی و پرسشی به شکل ساده برمی‌گردد: Did she cut her finger? ✓ (نه cutted / did she cutted).",
+    "بعضی فعل‌های این درس در گذشته تغییری نمی‌کنند: cut → cut, hit → hit, hurt → hurt, put → put — در تست اغلب همین‌ها را می‌آورند.",
+    "ضمیر مفعولی را با فاعل اشتباه نگیرید: She hurt them (چشم‌ها = مفعول) نه she.",
+    "ملکِ فاعل جمع، جمعی است: They twisted their ankles.",
+    "واژه‌های بدن و آسیب (bleed, wound, plaster, ankle, knee) با فعل درست‌شان حفظ شوند (...: put a plaster on the wound).",
+    "الگوی «Do you need help?» و پاسخ‌های کمک‌خواستن در مکالمۀ کلاسی و تست شنیداری کاربرد دارد."
+  ],
+  questions:[
+    {q:"Reza ...... his leg last winter.",mcq:["breaks","broke","breaked","breaking"],ans:1,ex:"گذشتۀ بی‌قاعدۀ break می‌شود broke (شکل breaked وجود ندارد)."},
+    {q:"...... you cut your finger yesterday? — Yes, I did.",mcq:["Do","Did","Was","Were"],ans:1,ex:"پرسش گذشتۀ ساده با Did ساخته می‌شود."},
+    {q:"What happened to Samira's eyes? — She hurt ......",mcq:["it","them","her","they"],ans:1,ex:"«eyes» جمع است؛ ضمیر مفعولی جمع: them."},
+    {q:"Ali hit his head on the door. (پرسش بسازید: Where ...?)",wa:["Where did Ali hit his head?"],ex:"Where + did + فاعل + فعل ساده."},
+    {q:"غلط را اصلاح کنید: Did she ate in a restaurant?",wa:["Did she eat in a restaurant? — بعد از did فعل ساده می‌آید."],ex:"بعد از did فعل بی‌قاعده به شکل ساده برمی‌گردد."},
+    {q:"ضمیر مفعولی درست: The books are on the desk. Please read ......",mcq:["they","their","them","it"],ans:2,ex:"«books» مفعول جمع است؛ ضمیر them می‌گیرد."}
+  ]
+}
+],
+appendix:{
+  title:"پیوست — جدول کامل افعال بی‌قاعده (Irregular Verbs)",
+  note:"این جدول عیناً از کتاب دانش‌آموز، صفحات ۱۳۱ تا ۱۳۳ (Photo Dictionary) آورده شده و برای درس‌های ۵ و ۶ پایۀ اصلی امتحان است. همۀ فعل‌ها با شکل گذشتۀ ساده (زمان گذشته) آمده‌اند.",
+  verbs:[
+    ["be","was / were","بودن"],["become","became","شدن، تبدیل شدن"],["bleed","bled","خون‌ریزی کردن"],
+    ["break","broke","شکستن"],["bring","brought","آوردن"],["build","built","ساختن"],
+    ["buy","bought","خریدن"],["choose","chose","انتخاب کردن"],["come","came","آمدن"],
+    ["cut","cut","بریدن"],["do","did","انجام دادن"],["draw","drew","نقاشی کشیدن"],
+    ["drink","drank","نوشیدن"],["drive","drove","رانندگی کردن"],["eat","ate","خوردن"],
+    ["fall","fell","افتادن، زمین خوردن"],["feed","fed","غذا دادن"],["feel","felt","حس کردن"],
+    ["find","found","پیدا کردن"],["forget","forgot","فراموش کردن"],["get","got","گرفتن، به دست آوردن"],
+    ["give","gave","دادن"],["go","went","رفتن"],["have","had","داشتن"],
+    ["hear","heard","شنیدن"],["hit","hit","ضربه زدن"],["hurt","hurt","آسیب رساندن"],
+    ["keep","kept","نگه داشتن"],["know","knew","دانستن"],["leave","left","ترک کردن، رفتن از"],
+    ["lose","lost","گم کردن، باختن"],["make","made","ساختن، درست کردن"],["meet","met","ملاقات کردن"],
+    ["pay","paid","پرداخت کردن"],["put","put","گذاشتن"],["read","read /red/","خواندن"],
+    ["ride","rode","سوار شدن"],["run","ran","دویدن"],["say","said","گفتن"],
+    ["see","saw","دیدن"],["set","set","چیدن (میز)، تنظیم کردن"],["sell","sold","فروختن"],
+    ["send","sent","فرستادن"],["sing","sang","خواندن (آواز)"],["sit","sat","نشستن"],
+    ["sleep","slept","خوابیدن"],["speak","spoke","صحبت کردن"],["stand","stood","ایستادن"],
+    ["stick","stuck","چسباندن"],["swim","swam","شنا کردن"],["take","took","بردن، گرفتن"],
+    ["take off","took off","برخاستن (هواپیما)؛ درآوردن"],["teach","taught","درس دادن"],["tell","told","گفتن، تعریف کردن"],
+    ["think","thought","فکر کردن"],["understand","understood","فهمیدن"],["wake","woke","بیدار شدن"],
+    ["wear","wore","پوشیدن"],["write","wrote","نوشتن"]
+  ]
+}
+};
+
+/* ================= منطق ماژول زبان انگلیسی نهم (eng9) ================= */
+(function(){
+"use strict";
+const D=window.ENG9_DATA;
+const wrap=document.getElementById("eng9-module");
+const app=document.getElementById("eng9-app");
+const nav=document.getElementById("eng9-nav");
+
+/* ---------- دسترسی امن به حافظه (اگر مرورگر ذخیره‌سازی را مسدود کند، سایت از کار نمی‌افتد) ---------- */
+function sGet(k){try{return window.localStorage.getItem(k)}catch(e){return null}}
+function sSet(k,v){try{window.localStorage.setItem(k,v)}catch(e){}}
+
+/* ---------- محافظت: بدون داده یا بدون نقطۀ رندر، پیام خطای مناسب نمایش بده (نه صفحۀ سفید) ---------- */
+if(!app){return}
+if(!D||!D.lessons){
+  app.innerHTML='<div class="eng9-panel" style="margin:24px auto;max-width:640px;text-align:center"><h2>زبان انگلیسی پایه نهم</h2><p>در بارگذاری محتوای ماژول خطایی رخ داد. لطفاً صفحه را دوباره بارگذاری کن.</p><a class="eng9-btn" href="#eng9-home">تلاش دوباره</a></div>';
+  return;
+}
+
+/* ---------- وضعیت ---------- */
+let progress={};
+try{progress=JSON.parse(sGet("eng9-progress")||"{}")||{}}catch(e){progress={}}
+const S={tabs:{},answered:{},vIdx:0,vFlipped:false,vFlashOn:false,lFlash:{},qSel:"0"};
+
+/* ---------- ابزارها ---------- */
+function faNum(n){return String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d])}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function isEn(s){return /^[\x00-\x7F\u200c\s]*$/.test(String(s))&&/[A-Za-z]/.test(String(s))}
+function saveP(){sSet("eng9-progress",JSON.stringify(progress));updateRing()}
+function updateRing(){
+  const done=D.lessons.filter(l=>progress["l"+l.id]).length;
+  const pct=Math.round(done/D.lessons.length*100);
+  wrap.style.setProperty("--eng9-progress",pct+"%");
+  const el=document.getElementById("eng9-pct");if(el)el.textContent=pct+"%";
+}
+function tbl(t){
+  const head=t.head.map(h=>"<th>"+esc(h)+"</th>").join("");
+  const rows=t.rows.map(r=>"<tr>"+r.map(c=>{
+    const en=isEn(c)?" class=\"eng9-ltr\"":"";
+    return "<td"+en+">"+esc(c)+"</td>";
+  }).join("")+"</tr>").join("");
+  return "<div class=\"eng9-tbl-wrap\"><table class=\"eng9-tbl\"><thead><tr>"+head+"</tr></thead><tbody>"+rows+"</tbody></table></div>";
+}
+function lessonById(id){return D.lessons.find(x=>x.id===+id)}
+function doneBadge(id){return progress["l"+id]?"<span class=\"eng9-done-badge\">✓ خوانده شد</span>":""}
+function markBtn(l){
+  const done=!!progress["l"+l.id];
+  return "<button class=\"eng9-btn"+(done?" secondary":"")+"\" data-act=\"mark\" data-l=\""+l.id+"\">"+(done?"✓ درس تکمیل شده":"علامت‌گذاری به‌عنوان مطالعه‌شده")+"</button>";
+}
+
+/* ---------- سازنده‌های محتوا ---------- */
+function vocabTableHTML(rows){
+  if(!rows.length)return "<p class=\"eng9-muted\">واژه‌ای مطابق جست‌وجو پیدا نشد.</p>";
+  const body=rows.map(v=>"<tr><td class=\"eng9-ltr\">"+esc(v.en)+"</td><td>"+esc(v.fa)+"</td><td>"+esc(v.ty)+"</td><td><span class=\"eng9-tag\">درس "+faNum(v.l)+"</span></td></tr>").join("");
+  return "<div class=\"eng9-tbl-wrap\"><table class=\"eng9-tbl\"><thead><tr><th>واژۀ انگلیسی</th><th>معنی فارسی</th><th>نوع</th><th>درس</th></tr></thead><tbody>"+body+"</tbody></table></div>";
+}
+function flashHTML(v,label){
+  return "<div class=\"eng9-flash\" data-act=\""+(label||"vflashflip")+"\"><div class=\"eng9-f-en\">"+esc(v.en)+"</div><div class=\"eng9-f-fa\">"+esc(v.fa)+"</div><div class=\"eng9-f-hint\">برای دیدن معنی، روی کارت کلیک کن</div></div>";
+}
+function filteredVocab(){
+  const si=document.getElementById("eng9-vsearch"), se=document.getElementById("eng9-vsel");
+  const q=si?(si.value||"").trim().toLowerCase():"";
+  const lid=se?se.value:"0";
+  const rows=[];
+  D.lessons.forEach(L=>{
+    if(lid!=="0"&&+lid!==L.id)return;
+    L.vocab.forEach(v=>{
+      if(q&&!(v[0].toLowerCase().includes(q)||v[1].includes(q)))return;
+      rows.push({l:L.id,en:v[0],fa:v[1],ty:v[2]});
+    });
+  });
+  return rows;
+}
+function grammarCard(g){
+  let h="<div class=\"eng9-card\" style=\"margin-bottom:16px\"><h4 class=\"eng9-h4\" style=\"margin-top:0\">"+esc(g.title)+"</h4>";
+  (g.body||[]).forEach(p=>{h+="<p>"+esc(p)+"</p>"});
+  (g.examples||[]).forEach(e=>{h+="<div class=\"eng9-exbox\"><div class=\"eng9-en\">"+esc(e[0])+"</div><div class=\"eng9-fa\">"+esc(e[1])+"</div></div>"});
+  (g.list||[]).forEach(x=>{h+="<div class=\"eng9-formula\">"+esc(x)+"</div>"});
+  if(g.table)h+=tbl(g.table);
+  (g.notes||[]).forEach(n=>{h+="<div class=\"eng9-tip\"><b>"+esc(n[0])+":</b> "+esc(n[1])+"</div>"});
+  return h+"</div>";
+}
+function convTab(L){
+  const c=L.conv;
+  let h="<div class=\"eng9-card\"><span class=\"eng9-tag src-book\">"+esc(c.src)+"</span><h4 class=\"eng9-h4\" style=\"margin-top:10px\">"+esc(c.title)+"</h4><div class=\"eng9-chat\">";
+  c.lines.forEach((ln,i)=>{h+="<div class=\"eng9-msg "+(i%2?"b":"a")+"\"><div class=\"eng9-msg-name\">"+esc(ln[0])+"</div><div class=\"eng9-msg-en\">"+esc(ln[1])+"</div><div class=\"eng9-msg-fa\">"+esc(ln[2])+"</div></div>"});
+  h+="</div><h4 class=\"eng9-h4\">عبارات کلیدی (Key Language)</h4>";
+  c.phrases.forEach(p=>{h+="<div class=\"eng9-exbox\"><div class=\"eng9-en\">"+esc(p[0])+"</div><div class=\"eng9-fa\">"+esc(p[1])+"</div></div>"});
+  if(c.note)h+="<div class=\"eng9-tip\"><b>نکته:</b> "+esc(c.note)+"</div>";
+  return h+"</div>";
+}
+function readingTab(L){
+  const r=L.reading;
+  let h="<div class=\"eng9-card\"><span class=\"eng9-tag src-book\">"+esc(r.src)+"</span><h4 class=\"eng9-h4\" style=\"margin-top:10px\">"+esc(r.title)+"</h4>";
+  h+="<div class=\"eng9-exbox\"><div class=\"eng9-en\">"+esc(r.en)+"</div></div>";
+  h+="<div class=\"eng9-rule\"><b>ترجمه:</b><p>"+esc(r.fa)+"</p></div>";
+  h+="<h4 class=\"eng9-h4\">نکات متن</h4><div class=\"eng9-tip\">"+r.notes.map(t=>"<div>✓ "+esc(t)+"</div>").join("")+"</div></div>";
+  return h;
+}
+function wbTab(L){
+  let h="";
+  L.workbook.forEach((w,i)=>{
+    h+="<div class=\"eng9-card eng9-qcard\"><span class=\"eng9-tag src-wb\">"+esc(w.src)+"</span>";
+    if(w.img)h+="<span class=\"eng9-tag\" style=\"background:#df4b5818;color:var(--eng9-bad)\">وابسته به تصویر/صوت</span>";
+    h+="<h4 class=\"eng9-h4\" style=\"margin-top:10px\">"+esc(w.t)+"</h4>";
+    (w.body||[]).forEach(p=>{h+="<p>"+esc(p)+"</p>"});
+    if(w.note)h+="<div class=\"eng9-warn\">⚠ "+esc(w.note)+"</div>";
+    if(w.ans&&w.ans.length){
+      const label=w.ansKind||"پاسخ";
+      h+="<button class=\"eng9-acc-btn\" data-act=\"reveal\" data-target=\"eng9-wb-"+L.id+"-"+i+"\">نمایش "+esc(label)+"</button>";
+      h+="<div class=\"eng9-result\" id=\"eng9-wb-"+L.id+"-"+i+"\" hidden>"+w.ans.map(a=>"<div style=\"margin:3px 0\">"+esc(a)+"</div>").join("")+"</div>";
+    }
+    h+="</div>";
+  });
+  return h;
+}
+function examTab(L){
+  return "<div class=\"eng9-card\"><h4 class=\"eng9-h4\" style=\"margin-top:0\">نکات مهم امتحانی درس "+faNum(L.id)+"</h4><div class=\"eng9-tip\">"+L.exam.map(t=>"<div>✓ "+esc(t)+"</div>").join("")+"</div></div>";
+}
+function questionCardHTML(L,q,qi){
+  const key=L.id+"-"+qi;
+  let h="<div class=\"eng9-card eng9-qcard\"><span class=\"eng9-tag src-q\">سؤال تألیفی</span> <span class=\"eng9-chapter-num\">سؤال "+faNum(qi+1)+"</span>";
+  h+="<h4 style=\"margin:8px 0 0\">"+esc(q.q)+"</h4>";
+  if(q.mcq){
+    h+="<div class=\"eng9-options\">"+q.mcq.map((o,j)=>{
+      let cls="eng9-option";
+      if(S.answered[key]!==undefined){if(j===q.ans)cls+=" correct";else if(j===S.answered[key])cls+=" wrong"}
+      return "<button class=\""+cls+"\" data-act=\"opt\" data-l=\""+L.id+"\" data-q=\""+qi+"\" data-i=\""+j+"\""+(S.answered[key]!==undefined?" disabled":"")+">"+esc(o)+"</button>";
+    }).join("")+"</div>";
+    const shown=S.answered[key]!==undefined;
+    h+="<div class=\"eng9-result\""+(shown?"":" hidden")+">"+(shown?((S.answered[key]===q.ans?"✅ درست! ":"❌ پاسخ درست نیست. ")+esc(q.ex||"")):"")+"</div>";
+  }
+  if(q.wa){
+    h+="<button class=\"eng9-acc-btn\" data-act=\"reveal\" data-target=\"eng9-q-"+key+"\">نمایش پاسخ</button>";
+    h+="<div class=\"eng9-result\" id=\"eng9-q-"+key+"\" hidden>"+q.wa.map(a=>"<div style=\"margin:3px 0\">"+esc(a)+"</div>").join("")+(q.ex?"<p class=\"eng9-muted\" style=\"margin:6px 0 0\">"+esc(q.ex)+"</p>":"")+"</div>";
+  }
+  return h+"</div>";
+}
+function qTab(L){
+  let h="<div class=\"eng9-tip\" style=\"margin-bottom:14px\"><b>راهنما:</b> نمونه‌سؤال‌های این بخش تألیفی‌اند؛ یعنی عین سؤال کتاب نیستند و فقط بر پایۀ محتوای کتاب برای تمرین ساخته شده‌اند. سؤال‌های چهارگزینه‌ای تعاملی‌اند و پاسخ سؤال‌های تشریحی با دکمه نمایش داده می‌شود.</div>";
+  L.questions.forEach((q,qi)=>{h+=questionCardHTML(L,q,qi)});
+  return h;
+}
+function vocabTab(L,withFlash){
+  let h="<h4 class=\"eng9-h4\" style=\"margin-top:0\">واژگان مهم درس "+faNum(L.id)+" — "+esc(L.title)+" ("+faNum(L.vocab.length)+" واژه)</h4>";
+  h+=vocabTableHTML(L.vocab.map(v=>({l:L.id,en:v[0],fa:v[1],ty:v[2]})));
+  h+="<div class=\"eng9-toolbar\"><button class=\"eng9-btn secondary\" data-act=\"lflash\" data-l=\""+L.id+"\">مرور کارتی این واژگان</button></div><div id=\"eng9-lflash-"+L.id+"\"></div>";
+  return h;
+}
+function lessonPanel(l,tab){
+  const L=lessonById(l);if(!L)return "";
+  switch(tab){
+    case "grammar":return "<div class=\"eng9-panel\">"+L.grammar.map(grammarCard).join("")+"</div>";
+    case "conv":return "<div class=\"eng9-panel\">"+convTab(L)+"</div>";
+    case "reading":return "<div class=\"eng9-panel\">"+readingTab(L)+"</div>";
+    case "wb":return "<div class=\"eng9-panel\">"+wbTab(L)+"</div>";
+    case "exam":return "<div class=\"eng9-panel\">"+examTab(L)+"</div>";
+    case "q":return "<div class=\"eng9-panel\">"+qTab(L)+"</div>";
+    default:return "<div class=\"eng9-panel\">"+vocabTab(L)+"</div>";
+  }
+}
+const TABS=[["vocab","واژگان"],["grammar","گرامر"],["conv","مکالمه"],["reading","متن خواندنی"],["wb","کتاب کار"],["exam","نکات امتحانی"],["q","نمونه‌سؤال"]];
+
+/* ---------- نماها ---------- */
+function lessonCardHTML(L){
+  return "<a class=\"eng9-card eng9-lesson-card\" href=\"#eng9-lesson-"+L.id+"\"><span class=\"eng9-chapter-num\">درس "+faNum(L.id)+"</span><span class=\"eng9-chapter-icon\">"+L.icon+"</span>"+doneBadge(L.id)+"<h3>"+esc(L.title)+"</h3><p class=\"eng9-muted\">"+esc(L.en)+"</p><div class=\"eng9-tags\">"+L.vocab.slice(0,3).map(v=>"<span class=\"eng9-tag\">"+esc(v[0])+"</span>").join("")+"</div></a>";
+}
+function appendixCardHTML(){
+  return "<a class=\"eng9-card eng9-lesson-card\" href=\"#eng9-appendix\"><span class=\"eng9-chapter-num\">پیوست</span><span class=\"eng9-chapter-icon\">📋</span><h3>افعال بی‌قاعده</h3><p class=\"eng9-muted\">Irregular Verbs</p><div class=\"eng9-tags\"><span class=\"eng9-tag\">"+faNum(D.appendix.verbs.length)+" فعل</span><span class=\"eng9-tag\">جدول کامل</span></div></a>";
+}
+function shell(title,sub,body,navKey){
+  return "<section class=\"eng9-section\"><div class=\"eng9-section-head\"><div><span class=\"eng9-eyebrow\">زبان انگلیسی پایه نهم</span><h2>"+title+"</h2><p class=\"eng9-muted\">"+(sub||"")+"</p></div></div>"+body+"</section>";
+}
+function viewHome(){
+  const totalV=D.lessons.reduce((s,l)=>s+l.vocab.length,0);
+  const totalW=D.lessons.reduce((s,l)=>s+l.workbook.length,0);
+  const totalQ=D.lessons.reduce((s,l)=>s+l.questions.length,0);
+  const cards=D.lessons.map(lessonCardHTML).join("")+appendixCardHTML();
+  return "<div class=\"eng9-hero\"><div class=\"eng9-hero-grid\"><div><span class=\"eng9-eyebrow\">ماژول آموزشی تعاملی</span><h1>زبان انگلیسی <span>پایه نهم</span></h1><p class=\"eng9-lead\">"+esc(D.meta.intro)+"</p><div class=\"eng9-hero-actions\"><a class=\"eng9-btn\" href=\"#eng9-lessons\">شروع یادگیری</a><a class=\"eng9-btn secondary\" href=\"#eng9-vocab\">واژه‌نامه</a></div></div><div class=\"eng9-progress-card\"><div class=\"eng9-progress-ring\"><div id=\"eng9-pct\">0%</div></div><h3 style=\"text-align:center\">پیشرفت یادگیری</h3><p class=\"eng9-muted\" style=\"text-align:center\">هر درس را که کامل مطالعه کردی، در صفحۀ همان درس علامت بزن.</p></div></div></div>"
+  +"<section class=\"eng9-section\" id=\"eng9-chapters\"><div class=\"eng9-section-head\"><div><h2>درس‌های کتاب</h2><p class=\"eng9-muted\">درس‌ها را به ترتیب کتاب مرور کن؛ هر درس شامل واژگان، گرامر، مکالمه، متن خواندنی، کتاب کار، نکات امتحانی و نمونه‌سؤال است.</p></div></div><div class=\"eng9-grid\">"+cards+"</div></section>"
+  +"<section class=\"eng9-section\"><div class=\"eng9-section-head\"><div><h2>در یک نگاه</h2></div></div><div class=\"eng9-stats\"><div class=\"eng9-stat\"><b>"+faNum(D.lessons.length)+"</b> درس</div><div class=\"eng9-stat\"><b>"+faNum(totalV)+"</b> واژه با معنی فارسی</div><div class=\"eng9-stat\"><b>"+faNum(totalW)+"</b> تمرین کتاب کار</div><div class=\"eng9-stat\"><b>"+faNum(totalQ)+"</b> نمونه‌سؤال تألیفی</div></div></section>"
+  +shell("راهنمای استفاده","این ماژول محتوای جزوۀ آمادگی امتحان را درس‌به‌درس و تعاملی نمایش می‌دهد.","<div class=\"eng9-grid3\"><div class=\"eng9-card\"><h3>بخش‌های هر درس</h3><p class=\"eng9-muted\">هر درس هفت تب دارد: واژگان، گرامر، مکالمه، متن خواندنی، کتاب کار (پاسخ تمرین‌ها)، نکات امتحانی و نمونه‌سؤال با پاسخ‌نامه. با دکمه‌های «درس قبلی/بعدی» جابه‌جا شو.</p></div><div class=\"eng9-card\"><h3>علائم منبع</h3><p>"+esc(D.meta.sources)+"</p><div class=\"eng9-tags\" style=\"margin-top:8px\"><span class=\"eng9-tag src-book\">کتاب دانش‌آموز</span><span class=\"eng9-tag src-wb\">کتاب کار</span><span class=\"eng9-tag src-q\">سؤال تألیفی</span></div></div><div class=\"eng9-card\"><h3>فایل‌های صوتی کتاب (کتاب گویا)</h3><p class=\"eng9-muted\">"+esc(D.meta.audio)+"</p></div></div>");
+}
+
+function viewLessons(){
+  return shell("درس‌های کتاب","هر درس شامل واژگان، گرامر، مکالمه، متن خواندنی، کتاب کار، نکات امتحانی و نمونه‌سؤال است.","<div class=\"eng9-grid\">"+D.lessons.map(lessonCardHTML).join("")+appendixCardHTML()+"</div>","lessons");
+}
+function viewLesson(id){
+  const L=lessonById(id);if(!L)return view404();
+  const tab=S.tabs[L.id]||"vocab";
+  const tabs=TABS.map(t=>"<button class=\"eng9-tab"+(t[0]===tab?" active":"")+"\" data-act=\"tab\" data-l=\""+L.id+"\" data-tab=\""+t[0]+"\">"+t[1]+"</button>").join("");
+  const prev=D.lessons.find(x=>x.id===L.id-1),next=D.lessons.find(x=>x.id===L.id+1);
+  const pager="<div class=\"eng9-pager\">"
+    +(prev?"<a class=\"eng9-btn secondary\" href=\"#eng9-lesson-"+prev.id+"\">→ درس قبل: "+esc(prev.title)+"</a>":"<span></span>")
+    +"<a class=\"eng9-btn secondary\" href=\"#eng9-lessons\">فهرست درس‌ها</a>"
+    +(next?"<a class=\"eng9-btn\" href=\"#eng9-lesson-"+next.id+"\">درس بعد: "+esc(next.title)+" ←</a>":"<a class=\"eng9-btn\" href=\"#eng9-appendix\">پیوست افعال ←</a>")
+    +"</div>";
+  return "<section class=\"eng9-section\"><div class=\"eng9-section-head\"><div><span class=\"eng9-eyebrow\">درس "+faNum(L.id)+" • "+esc(L.en)+"</span><h2>"+esc(L.id+". "+L.title)+"</h2><p class=\"eng9-muted\">"+esc(L.pages)+"</p></div><div>"+markBtn(L)+"</div></div>"
+  +"<div class=\"eng9-rule\"><b>در این درس</b><p>"+esc(L.intro)+"</p></div>"
+  +"<div class=\"eng9-tabs\" id=\"eng9-ltabs\">"+tabs+"</div>"
+  +"<div id=\"eng9-lbody\">"+lessonPanel(L.id,tab)+"</div>"
+  +pager+"</section>";
+}
+function viewVocab(){
+  return shell("واژه‌نامه","همۀ واژگان شش درس با معنی فارسی و نوع واژه؛ جست‌وجو کنید، بر اساس درس فیلتر کنید یا با کارت مرور کنید.",""
+  +"<div class=\"eng9-searchbar\"><input id=\"eng9-vsearch\" placeholder=\"جست‌وجو در واژه‌ها (انگلیسی یا فارسی)...\"><select class=\"eng9-select\" id=\"eng9-vsel\"><option value=\"0\">همۀ درس‌ها</option>"+D.lessons.map(l=>"<option value=\""+l.id+"\">درس "+faNum(l.id)+" — "+esc(l.title)+"</option>").join("")+"</select><button class=\"eng9-btn\" data-act=\"vflashmode\">"+(S.vFlashOn?"خروج از حالت کارتی":"حالت مرور کارتی")+"</button></div>"
+  +"<div id=\"eng9-vflash\">"+(S.vFlashOn?vFlashHTML():"")+"</div>"
+  +"<div id=\"eng9-vtable\">"+vocabTableHTML(filteredVocab())+"</div>","vocab");
+}
+function vFlashHTML(){
+  const rows=filteredVocab();if(!rows.length)return "";
+  if(S.vIdx>=rows.length)S.vIdx=rows.length-1;if(S.vIdx<0)S.vIdx=0;
+  const v=rows[S.vIdx];
+  return "<div class=\"eng9-flash"+(S.vFlipped?" flipped":"")+"\" data-act=\"vflashflip\"><div class=\"eng9-f-en\">"+esc(v.en)+"</div><div class=\"eng9-f-fa\">"+esc(v.fa)+"</div><div class=\"eng9-f-hint\">برای دیدن معنی، روی کارت کلیک کن • "+esc(v.ty)+" • درس "+faNum(v.l)+"</div></div>"
+  +"<div class=\"eng9-toolbar\" style=\"justify-content:center\"><button class=\"eng9-btn secondary\" data-act=\"vflashnav\" data-d=\"-1\">واژۀ قبلی</button><span class=\"eng9-muted\">"+faNum(S.vIdx+1)+" از "+faNum(rows.length)+"</span><button class=\"eng9-btn secondary\" data-act=\"vflashnav\" data-d=\"1\">واژۀ بعدی</button></div>";
+}
+function viewQuestions(){
+  const sel="<div class=\"eng9-toolbar\"><select class=\"eng9-select\" id=\"eng9-qsel\"><option value=\"0\">همۀ درس‌ها</option>"+D.lessons.map(l=>"<option value=\""+l.id+"\""+(S.qSel===String(l.id)?" selected":"")+">درس "+faNum(l.id)+" — "+esc(l.title)+"</option>").join("")+"</select></div>";
+  return shell("نمونه‌سؤال‌های تألیفی و پاسخ‌نامه","نمونه‌سؤال‌های هر درس با پاسخ؛ سؤال‌های چهارگزینه‌ای تعاملی‌اند.",""+sel+"<div id=\"eng9-qlist\">"+qListHTML()+"</div>","questions");
+}
+function qListHTML(){
+  const lid=S.qSel;
+  let h="",n=0;
+  D.lessons.forEach(L=>{
+    if(lid!=="0"&&+lid!==L.id)return;
+    h+="<h3 style=\"margin:22px 0 10px\">درس "+faNum(L.id)+" — "+esc(L.title)+"</h3>";
+    L.questions.forEach((q,qi)=>{h+=questionCardHTML(L,q,qi);n++});
+  });
+  return n?h:"<p class=\"eng9-muted\">سؤالی برای این فیلتر نیست.</p>";
+}
+function viewAppendix(){
+  const a=D.appendix;
+  const rows=a.verbs.map((v,i)=>"<tr><td class=\"eng9-ltr\">"+esc(v[0])+"</td><td class=\"eng9-ltr\">"+esc(v[1])+"</td><td>"+esc(v[2])+"</td></tr>").join("");
+  return shell("پیوست — جدول کامل افعال بی‌قاعده (Irregular Verbs)",esc(a.note),""
+  +"<div class=\"eng9-searchbar\"><input id=\"eng9-asearch\" placeholder=\"جست‌وجوی فعل (مثلاً: break یا خریدن)...\"></div>"
+  +"<div class=\"eng9-tbl-wrap\"><table class=\"eng9-tbl\" id=\"eng9-atbl\"><thead><tr><th>Verb</th><th>Past simple</th><th>معنی</th></tr></thead><tbody>"+rows+"</tbody></table></div>","appendix");
+}
+function viewAbout(){
+  return shell("درباره","ماژول آموزشی زبان انگلیسی پایه نهم",""
+  +"<div class=\"eng9-card\"><h3 style=\"margin-top:0\">سازنده</h3><p style=\"font-size:18px\"><strong>سازنده: ماهان شریفی</strong></p>"
+  +"<p>این ماژول آموزشی برای مرور درس‌به‌درس زبان انگلیسی پایۀ نهم ساخته شده است؛ شامل واژگان با معنی فارسی، گرامر با مثال‌های کتاب، مکالمه‌ها، متن‌های خواندنی با ترجمه، پاسخ تمرین‌های کتاب کار، نکات امتحانی و نمونه‌سؤال با پاسخ‌نامه.</p>"
+  +"<h3>منبع محتوا</h3><p>محتوای آموزشی این ماژول عیناً بر اساس جزوۀ آمادگی امتحان زبان انگلیسی پایۀ نهم (کتاب دانش‌آموز Prospect 3 و کتاب کار) تنظیم شده است و ترتیب درس‌ها مطابق همان منبع است.</p>"
+  +"<p class=\"eng9-muted\">این ماژول با HTML/CSS/JavaScript خالص ساخته شده، به سرور و بک‌اند نیاز ندارد و می‌تواند درون بخش محتوایی وب‌سایت‌های دیگر نیز قرار گیرد.</p></div>","about");
+}
+function view404(){
+  return shell("صفحه پیدا نشد","مسیر واردشده معتبر نیست.","<a class=\"eng9-btn\" href=\"#eng9-home\">بازگشت به خانه</a>","");
+}
+
+/* ---------- رندر و مسیریابی ---------- */
+function renderView(name,arg){
+  let html="",navKey="";
+  if(name==="home"){html=viewHome();navKey="home"}
+  else if(name==="lessons"){html=viewLessons();navKey="lessons"}
+  else if(name==="lesson"){html=viewLesson(arg);navKey="lessons"}
+  else if(name==="vocab"){html=viewVocab();navKey="vocab"}
+  else if(name==="questions"){html=viewQuestions();navKey="questions"}
+  else if(name==="appendix"){html=viewAppendix();navKey="appendix"}
+  else if(name==="about"){html=viewAbout();navKey="about"}
+  else html=view404();
+  app.innerHTML=html;
+  if(nav)nav.querySelectorAll("a").forEach(a=>a.classList.toggle("active",a.dataset.nav===navKey));
+  updateRing();
+  window.scrollTo(0,0);
+}
+function route(){
+  const h=location.hash||"";
+  if(h.indexOf("#eng9-")!==0)return;
+  const name=h.slice(6);
+  const m=name.match(/^lesson-(\d+)$/);
+  if(m)renderView("lesson",+m[1]);
+  else if(["home","lessons","vocab","questions","appendix","about"].indexOf(name)>=0)renderView(name,name);
+  else renderView("404");
+}
+
+/* ---------- تعامل‌ها ---------- */
+function answerQ(btn){
+  const l=+btn.dataset.l,qi=+btn.dataset.q,i=+btn.dataset.i,key=l+"-"+qi;
+  if(S.answered[key]!==undefined)return;
+  const L=lessonById(l),item=L&&L.questions?L.questions[qi]:undefined;if(!L||!item)return;
+  S.answered[key]=i;
+  const box=btn.closest(".eng9-options");
+  Array.prototype.forEach.call(box.children,(b,j)=>{b.disabled=true;if(j===item.ans)b.classList.add("correct")});
+  if(i!==item.ans)btn.classList.add("wrong");
+  const card=btn.closest(".eng9-qcard"),r=card.querySelector(".eng9-result");
+  r.innerHTML=(i===item.ans?"✅ درست! ":"❌ پاسخ درست نیست. ")+esc(item.ex||"");
+  r.hidden=false;
+}
+function setTab(btn){
+  const l=+btn.dataset.l,tab=btn.dataset.tab;
+  S.tabs[l]=tab;
+  document.querySelectorAll("#eng9-ltabs .eng9-tab").forEach(b=>b.classList.toggle("active",b===btn));
+  const body=document.getElementById("eng9-lbody");if(body)body.innerHTML=lessonPanel(l,tab);
+}
+function reveal(btn){
+  const body=document.getElementById(btn.dataset.target);if(!body)return;
+  body.hidden=!body.hidden;
+  btn.textContent=body.hidden?"نمایش پاسخ":"پنهان کردن پاسخ";
+}
+function mark(btn){
+  const k="l"+btn.dataset.l;
+  if(progress[k])delete progress[k];else progress[k]=Date.now();
+  saveP();
+  btn.classList.toggle("secondary",!!progress[k]);
+  btn.textContent=progress[k]?"✓ درس تکمیل شده":"علامت‌گذاری به‌عنوان مطالعه‌شده";
+}
+function showLFlash(btn){
+  const l=+btn.dataset.l,L=lessonById(l);if(!L)return;
+  const st=S.lFlash[l]||(S.lFlash[l]={idx:0,flipped:false,on:false});
+  const area=document.getElementById("eng9-lflash-"+l);if(!area)return;
+  st.on=!st.on;
+  area.innerHTML=st.on?lFlashHTML(L):"";
+  btn.textContent=st.on?"بستن مرور کارتی":"مرور کارتی این واژگان";
+}
+function lFlashHTML(L){
+  const st=S.lFlash[L.id],v=L.vocab[st.idx];
+  return "<div class=\"eng9-flash"+(st.flipped?" flipped":"")+"\" data-act=\"lflashflip\" data-l=\""+L.id+"\"><div class=\"eng9-f-en\">"+esc(v[0])+"</div><div class=\"eng9-f-fa\">"+esc(v[1])+"</div><div class=\"eng9-f-hint\">برای دیدن معنی کلیک کن • "+esc(v[2])+"</div></div>"
+  +"<div class=\"eng9-toolbar\" style=\"justify-content:center\"><button class=\"eng9-btn secondary\" data-act=\"lflashnav\" data-l=\""+L.id+"\" data-d=\"-1\">واژۀ قبلی</button><span class=\"eng9-muted\">"+faNum(st.idx+1)+" از "+faNum(L.vocab.length)+"</span><button class=\"eng9-btn secondary\" data-act=\"lflashnav\" data-l=\""+L.id+"\" data-d=\"1\">واژۀ بعدی</button></div>";
+}
+function lFlashRender(l){
+  const L=lessonById(l),area=document.getElementById("eng9-lflash-"+l);
+  if(area)area.innerHTML=lFlashHTML(L);
+}
+function filtersChanged(){
+  const tv=document.getElementById("eng9-vtable");
+  if(tv)tv.innerHTML=vocabTableHTML(filteredVocab());
+  const vf=document.getElementById("eng9-vflash");
+  if(vf&&S.vFlashOn){S.vIdx=0;S.vFlipped=false;vf.innerHTML=vFlashHTML()}
+}
+app.addEventListener("click",function(e){
+  const t=e.target.closest("[data-act]");if(!t)return;
+  const act=t.dataset.act;
+  if(act==="tab")setTab(t);
+  else if(act==="opt")answerQ(t);
+  else if(act==="reveal")reveal(t);
+  else if(act==="mark")mark(t);
+  else if(act==="lflash")showLFlash(t);
+  else if(act==="lflashflip"){const l=+t.dataset.l;S.lFlash[l].flipped=!S.lFlash[l].flipped;lFlashRender(l)}
+  else if(act==="lflashnav"){const l=+t.dataset.l,st=S.lFlash[l],n=lessonById(l).vocab.length;st.idx=(st.idx+ +t.dataset.d+n)%n;st.flipped=false;lFlashRender(l)}
+  else if(act==="vflashmode"){S.vFlashOn=!S.vFlashOn;S.vIdx=0;S.vFlipped=false;renderView("vocab")}
+  else if(act==="vflashflip"){S.vFlipped=!S.vFlipped;const vf=document.getElementById("eng9-vflash");if(vf)vf.innerHTML=vFlashHTML()}
+  else if(act==="vflashnav"){const n=filteredVocab().length;S.vIdx=(S.vIdx+ +t.dataset.d+n)%n;S.vFlipped=false;const vf=document.getElementById("eng9-vflash");if(vf)vf.innerHTML=vFlashHTML()}
+});
+app.addEventListener("input",function(e){
+  if(e.target.id==="eng9-vsearch")filtersChanged();
+  else if(e.target.id==="eng9-vsel")filtersChanged();
+  else if(e.target.id==="eng9-qsel"){S.qSel=e.target.value;const ql=document.getElementById("eng9-qlist");if(ql)ql.innerHTML=qListHTML()}
+  else if(e.target.id==="eng9-asearch"){
+    const q=(e.target.value||"").trim().toLowerCase();
+    document.querySelectorAll("#eng9-atbl tbody tr").forEach(tr=>{
+      tr.style.display=(!q||tr.textContent.toLowerCase().includes(q))?"":"none";
+    });
+  }
+});
+app.addEventListener("change",function(e){
+  if(e.target.id==="eng9-vsel")filtersChanged();
+  else if(e.target.id==="eng9-qsel"){S.qSel=e.target.value;const ql=document.getElementById("eng9-qlist");if(ql)ql.innerHTML=qListHTML()}
+});
+
+/* ---------- شروع: اول رندر محتوا، بعد اتصال امکانات جانبی (خطای هر قابلیت نباید کل سایت را از کار بیندازد) ---------- */
+function start(){
+  try{
+    if((location.hash||"").indexOf("#eng9-")===0)route();
+    else renderView("home");
+  }catch(err){
+    try{
+      app.innerHTML='<div class="eng9-panel" style="margin:24px auto;max-width:640px;text-align:center"><h2>زبان انگلیسی پایه نهم</h2><p>در نمایش این بخش خطایی رخ داد. لطفاً صفحه را دوباره بارگذاری کن.</p><p class="eng9-muted">'+esc(String((err&&err.message)||err))+'</p><a class="eng9-btn" href="#eng9-home">تلاش دوباره</a></div>';
+    }catch(e2){}
+  }
+}
+window.addEventListener("hashchange",function(){start()});
+start();
+
+/* ---------- تم، منو، دکمۀ بالا (اختیاری) ---------- */
+try{
+  const themeBtn=document.getElementById("eng9-themeBtn");
+  if(sGet("eng9-theme")==="dark")wrap.classList.add("dark");
+  if(themeBtn)themeBtn.onclick=function(){
+    wrap.classList.toggle("dark");
+    sSet("eng9-theme",wrap.classList.contains("dark")?"dark":"light");
+  };
+}catch(e){}
+try{
+  const menuBtn=document.getElementById("eng9-menuBtn");
+  if(menuBtn)menuBtn.onclick=function(){nav.classList.toggle("eng9-open")};
+  if(nav)nav.addEventListener("click",function(e){if(e.target.closest("a"))nav.classList.remove("eng9-open")});
+}catch(e){}
+try{
+  const toTop=document.getElementById("eng9-toTop");
+  if(toTop){
+    window.addEventListener("scroll",function(){toTop.classList.toggle("show",window.scrollY>500)});
+    toTop.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
+  }
+}catch(e){}
+})();
+
+</script>
+</body>
+</html>
