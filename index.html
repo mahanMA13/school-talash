@@ -218,7 +218,7 @@ body.dark{--bg:#0e1420;--surface:#151d2b;--surface2:#1d2736;--text:#edf2fa;--mut
 </section>
 </main>
 
-<footer class="footer"><div class="container">هسته اصلی پلتفرم آموزشی پایه نهم • آماده اتصال به ماژول‌های مستقل درس‌ها</div></footer>
+<footer class="footer"><div class="container">هسته اصلی پلتفرم آموزشی پایه نهم • آماده اتصال به ماژول‌های مستقل درس‌ها<br><span style="display:inline-block;margin-top:10px">درباره سایت | سازنده: ماهان شریفی</span></div></footer>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -231,9 +231,21 @@ const SUBJECTS=[
   {id:"english",name:"انگلیسی نهم",icon:"🇬🇧",desc:"ماژول انگلیسی نهم",ready:true,path:"english9.html"}
 ];
 const STORAGE="grade9-core-state-v1";
-let state=JSON.parse(localStorage.getItem(STORAGE)||'{"last":"math","activity":"ورود به پلتفرم"}');
-
-function saveState(){localStorage.setItem(STORAGE,JSON.stringify(state));updateUI();}
+const DEFAULT_STATE={last:"math",activity:"ورود به پلتفرم"};
+function readSavedState(){
+  try{
+    const raw=localStorage.getItem(STORAGE);
+    if(!raw)return {...DEFAULT_STATE};
+    const parsed=JSON.parse(raw);
+    if(!parsed || typeof parsed!=="object" || Array.isArray(parsed))return {...DEFAULT_STATE};
+    return {...DEFAULT_STATE,...parsed};
+  }catch(_){return {...DEFAULT_STATE};}
+}
+let state=readSavedState();
+function saveState(){
+  try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch(_){}
+  updateUI();
+}
 function go(route){location.hash="#"+route;}
 function openMath(){state.last="math";state.activity="ورود به ریاضی نهم";saveState();window.location.href="riazi9.html";}
   function openSubject(s){if(!s||!s.path)return;state.last=s.id;state.activity="ورود به "+s.name;saveState();window.location.href=s.path;}
@@ -272,8 +284,11 @@ function route(){
  window.scrollTo({top:0,behavior:"smooth"});
  updateUI();
 }
-document.getElementById("themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("core-theme",document.body.classList.contains("dark")?"dark":"light");};
-if(localStorage.getItem("core-theme")==="dark")document.body.classList.add("dark");
+document.getElementById("themeBtn").onclick=()=>{
+  document.body.classList.toggle("dark");
+  try{localStorage.setItem("core-theme",document.body.classList.contains("dark")?"dark":"light");}catch(_){}
+};
+try{if(localStorage.getItem("core-theme")==="dark")document.body.classList.add("dark");}catch(_){}
 window.addEventListener("hashchange",route);
 renderHomeSubjects();renderSubjects();route();
 </script>
